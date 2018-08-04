@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 08/04/2018 07:01:11 PM
+-- Create Date: 07/31/2018 10:09:39 AM
 -- Design Name: 
--- Module Name: top_module - Behavioral
+-- Module Name: clock_div - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -21,8 +21,8 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.numeric_std.all;
-use IEEE.std_logic_unsigned.all;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -33,29 +33,27 @@ use IEEE.std_logic_unsigned.all;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity top_module is
-  Port (
-        clk: in STD_LOGIC;
-
-        led: out STD_LOGIC_VECTOR (3 downto 0);
-        x: in STD_LOGIC_VECTOR ( 3 downto 0)
-       );
-end top_module;
-
-architecture Behavioral of top_module is
-
-component clock_div is
+entity clock_div is
 Port(
         clk_in: in STD_LOGIC;
         clk_out: out STD_LOGIC
     );
-    
+end clock_div;
 
-end component clock_div;
+architecture Behavioral of clock_div is
+signal counter: STD_LOGIC_VECTOR(24 downto 0);
 signal div: STD_LOGIC;
-
 begin
-clock: clock_div Port map(clk_in => clk,clk_out => div);
-
-led(0) <= div;
+    prescaler: process(clk_in) 
+begin
+    if rising_edge(clk_in) then 
+        if counter < X"B71B00" then -- 25 MHz hex
+            counter <= counter + 1;
+        else
+            div <= not div;
+            counter <= (others => '0');
+        end if;
+     end if;
+ end process prescaler;
+ clk_out <= div;
 end Behavioral;
