@@ -21,7 +21,8 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
+use IEEE.numeric_std.all;
+use IEEE.std_logic_unsigned.all;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -34,9 +35,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity seg7 is
 Port(
     x : in STD_LOGIC_VECTOR (3 downto 0);
-    an_in : in STD_LOGIC_VECTOR (3 downto 0);
+--    an_in : in STD_LOGIC_VECTOR (3 downto 0);
     g_to_a : out STD_LOGIC_VECTOR (6 downto 0);
-    an : out STD_LOGIC_VECTOR (3 downto 0);
+--    an : out STD_LOGIC_VECTOR (3 downto 0);
     dp : out STD_LOGIC
     );
 end seg7;
@@ -66,6 +67,6 @@ process(x)
             when others => g_to_a <= "0001110"; --F
         end case;
     end process;
-    an <= an_in;
-    dp <= '0';
+--    an(0) <= an_in(0);
+--    dp <= '0';
 end Behavioral;
