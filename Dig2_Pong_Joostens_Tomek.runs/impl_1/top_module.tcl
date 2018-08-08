@@ -61,6 +61,7 @@ set rc [catch {
     send_msg_id runtcl-2 error "sourcing script D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/a.tcl failed"
     return -code error
   }
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   catch { write_mem_info -force top_module.mmi }
   write_bitstream -force -no_partial_bitfile top_module.bit 
   catch { write_sysdef -hwdef top_module.hwdef -bitfile top_module.bit -meminfo top_module.mmi -file top_module.sysdef }

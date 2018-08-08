@@ -47,7 +47,7 @@ begin
     prescaler: process(clk_in) 
 begin
     if rising_edge(clk_in) then 
-        if counter < X"12c0" then -- 25 MHz hex
+        if counter < X"17D7840" then -- 25 MHz hex
             counter <= counter + 1;
         else
             div <= not div;
