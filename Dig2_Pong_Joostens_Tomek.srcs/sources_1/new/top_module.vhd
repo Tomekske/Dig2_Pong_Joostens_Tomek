@@ -199,18 +199,18 @@ nvc <= to_integer(signed(vc));
 xxx: clk_wiz_0 port map (clk_in1 => clk, clk_out1 => clk25, reset => clr, locked => open);
 
 vga: vga_640x480 Port map(clk => clk25, clr => clr, hsync => Hsync, vsync => Vsync, hc => hc, vc => vc, vidon => vidon);
---background: layer_background Port map(vidon => vidon, hc =>nhc , vc => nvc, red => vgaRed, green => vgaGreen, blue => vgaBlue);
+background: layer_background Port map(vidon => vidon, hc =>nhc , vc => nvc, red => vgaRed, green => vgaGreen, blue => vgaBlue);
 tt: blk_mem_gen_0 PORT MAP ( clka => clk, addra => rom_addr4, douta => M );
 
-rr: vga_sprite Port Map(vidon => vidon,
-hc => hc,
-vc => vc,
-M => M,
-sw => sw,
-rom_addr4 => rom_addr4,
-red => vgaRed,
-green => vgaGreen,
-blue => vgaBlue
-);
+--rr: vga_sprite Port Map(vidon => vidon,
+--hc => hc,
+--vc => vc,
+--M => M,
+--sw => sw,
+--rom_addr4 => rom_addr4,
+--red => vgaRed,
+--green => vgaGreen,
+--blue => vgaBlue
+--);
 
 end Behavioral;                                                                            

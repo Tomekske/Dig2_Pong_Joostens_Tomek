@@ -58,15 +58,32 @@ begin
     green <= "0000";
     blue <= "0000";
     if vidon = '1' then
-       if hc = 470 then
-        red <= "1111";
-        green <= "1111";
-        blue <= "1111";    
-       else
-        red <= "0000";
-        green <= "0000";
-        blue <= "0000";   
-       end if;
+        --centerline
+        if hc = 470 and (vc >= 100 and vc <= 450) then
+            red <= "1111";
+            green <= "1111";
+            blue <= "1111";
+        -- verticaal links    
+        elsif hc = 150 and (vc >= 100 and vc <= 450) then
+            red <= "1111";
+            green <= "1111";
+            blue <= "1111";
+         -- verticaal rechts    
+        elsif hc = 775 and (vc >= 100 and vc <= 450) then
+                red <= "1111";
+                green <= "1111";
+                blue <= "1111";
+        -- horizontaal boven       
+        elsif vc = 100 and (hc >= 150 and hc <= 775) then
+            red <= "1111";
+            green <= "1111";
+            blue <= "1111";
+         -- horizontaal beneden       
+        elsif vc = 450 and (hc >= 150 and hc <= 775) then
+                red <= "1111";
+                green <= "1111";
+                blue <= "1111";       
+        end if;
     end if;
 end process;
 
