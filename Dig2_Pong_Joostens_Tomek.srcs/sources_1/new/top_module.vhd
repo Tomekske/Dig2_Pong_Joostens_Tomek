@@ -129,12 +129,13 @@ end component;
 
 component vga_sprite is
   Port ( 
+  clk: in std_logic;
   vidon: in std_logic;
   hc : in std_logic_vector(9 downto 0);
   vc : in std_logic_vector(9 downto 0);
   M: in std_logic_vector(0 to 15);
   sw: in std_logic_vector(7 downto 0);
-  rom_addr4: out std_logic_vector(3 downto 0);
+  rom_sprite_paddle: out std_logic_vector(3 downto 0);
   red : out std_logic_vector(3 downto 0);
   green : out std_logic_vector(3 downto 0);
   blue : out std_logic_vector(3 downto 0)
@@ -150,8 +151,8 @@ end component;
 
 COMPONENT blk_mem_gen_0 PORT (
 clka : IN STD_LOGIC;
-addra : IN STD_LOGIC_VECTOR(3 DOWNTO 0); douta : OUT
-STD_LOGIC_VECTOR(15 DOWNTO 0) );
+addra : IN STD_LOGIC_VECTOR(3 DOWNTO 0); 
+douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0) );
 END COMPONENT;
 
 component clk_wiz_0
@@ -182,7 +183,7 @@ signal hc, vc : STD_LOGIC_VECTOR (9 downto 0);
 signal nhc, nvc: integer range 0 to 512; 
 signal clk25: STD_LOGIC;
 signal M : STD_LOGIC_VECTOR (0 to 15);
-signal rom_addr4 : STD_LOGIC_VECTOR (3 downto 0);
+signal rom_sprite_paddle : STD_LOGIC_VECTOR (3 downto 0);
 
 -- ####################################################
 -- ####################################################
@@ -199,18 +200,9 @@ nvc <= to_integer(signed(vc));
 xxx: clk_wiz_0 port map (clk_in1 => clk, clk_out1 => clk25, reset => clr, locked => open);
 
 vga: vga_640x480 Port map(clk => clk25, clr => clr, hsync => Hsync, vsync => Vsync, hc => hc, vc => vc, vidon => vidon);
-background: layer_background Port map(vidon => vidon, hc =>nhc , vc => nvc, red => vgaRed, green => vgaGreen, blue => vgaBlue);
-tt: blk_mem_gen_0 PORT MAP ( clka => clk, addra => rom_addr4, douta => M );
+--background: layer_background Port map(vidon => vidon, hc =>nhc , vc => nvc, red => vgaRed, green => vgaGreen, blue => vgaBlue);
+tt: blk_mem_gen_0 PORT MAP ( clka => clk, addra => rom_sprite_paddle, douta => M );
 
---rr: vga_sprite Port Map(vidon => vidon,
---hc => hc,
---vc => vc,
---M => M,
---sw => sw,
---rom_addr4 => rom_addr4,
---red => vgaRed,
---green => vgaGreen,
---blue => vgaBlue
---);
+rr: vga_sprite Port Map(clk => clk, vidon => vidon,hc => hc,vc => vc,M => M,sw => sw,rom_sprite_paddle => rom_sprite_paddle,red => vgaRed,green => vgaGreen,blue => vgaBlue);
 
 end Behavioral;                                                                            

@@ -2,37 +2,100 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
 # IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
-# Start of session at: Thu Aug 09 09:59:12 2018
-# Process ID: 2252
+# Start of session at: Fri Aug 10 13:14:26 2018
+# Process ID: 12844
 # Current directory: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13424 D:\Programs\Developing\Dig2_Pong_Joostens_Tomek\Dig2_Pong_Joostens_Tomek.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12332 D:\Programs\Developing\Dig2_Pong_Joostens_Tomek\Dig2_Pong_Joostens_Tomek.xpr
 # Log file: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/vivado.log
 # Journal file: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek\vivado.jou
 #-----------------------------------------------------------
-start_gui
-open_project D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.xpr
+start_guopopen_project D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.xpr
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.4/data/ip'.
-open_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 805.906 ; gain = 123.859
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.4/data/ip'reset_run synth_1
+launch_runs synth_1 -jobs 4
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/clk_wiz_0.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/clk_wiz_0.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/clock.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/clock.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/clock_div.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/clock_div.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/mux21.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/mux21.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/seg7.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/seg7.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_640x480.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_640x480.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:1]
+[Fri Aug 10 13:16:55 2018] Launched synth_1...
+Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property -dict [list CONFIG.Write_Width_A {16} CONFIG.Write_Depth_A {16} CONFIG.Coe_File {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/ip/paddle.coe} CONFIG.Read_Width_A {16} CONFIG.Write_Width_B {16} CONFIG.Read_Width_B {16}] [get_ips blk_mem_gen_0]
+INFO: [IP_Flow 19-3484] Absolute path of file 'd:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/ip/paddle.coe' provided. It will be converted relative to IP Instance files '../paddle.coe'
+generate_target all [get_files  D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'blk_mem_gen_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'blk_mem_gen_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'blk_mem_gen_0'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'blk_mem_gen_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'blk_mem_gen_0'...
+catch { config_ip_cache -export [get_ips -all blk_mem_gen_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP blk_mem_gen_0, cache-ID = 05a6f33b80e4fb84; cache size = 0.403 MB.
+catch { [ delete_ip_run [get_ips -all blk_mem_gen_0] ] }
+INFO: [Project 1-386] Moving file 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' from fileset 'blk_mem_gen_0' to fileset 'sources_1'.
+export_ip_user_files -of_objects [get_files D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci]
+INFO: [Vivado 12-3453] The given sub-design is up-to-date, no action was taken.  If a run is still desired, use the '-force' option for the file:'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci'
+export_simulation -of_objects [get_files D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci] -directory D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.ip_user_files/sim_scripts -ip_user_files_dir D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.ip_user_files -ipstatic_source_dir D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.cache/compile_simlib/modelsim} {questa=D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.cache/compile_simlib/questa} {riviera=D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.cache/compile_simlib/riviera} {activehdl=D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
 reset_run synth_1
 launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:1]
-CRITICAL WARNING: [HDL 9-806] Syntax error near "=>". [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:206]
-[Thu Aug 09 10:01:03 2018] Launched synth_1...
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+[Fri Aug 10 13:22:53 2018] Launched synth_1...
 Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
 reset_run synth_1
 launch_runs synth_1 -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
 INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:1]
-[Thu Aug 09 10:01:31 2018] Launched synth_1...
+[Fri Aug 10 13:23:57 2018] Launched synth_1...
+Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property -dict [list CONFIG.Coe_File {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/ip/paddle.coe}] [get_ips blk_mem_gen_0]
+INFO: [IP_Flow 19-3484] Absolute path of file 'd:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/ip/paddle.coe' provided. It will be converted relative to IP Instance files '../paddle.coe'
+generate_target all [get_files  D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'blk_mem_gen_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'blk_mem_gen_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'blk_mem_gen_0'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'blk_mem_gen_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'blk_mem_gen_0'...
+catch { config_ip_cache -export [get_ips -all blk_mem_gen_0] }
+export_ip_user_files -of_objects [get_files D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci]
+launch_runs -jobs 4 blk_mem_gen_0_synth_1
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'blk_mem_gen_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'blk_mem_gen_0'...
+WARNING: [Runs 36-53] Possible issues detected after target generation. Generation state is unexpected for target 'Synthesis'. Expected 'Generated', got 'Stale' for source 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci'
+[Fri Aug 10 13:26:23 2018] Launched blk_mem_gen_0_synth_1...
+Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/blk_mem_gen_0_synth_1/runme.log
+export_simulation -of_objects [get_files D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci] -directory D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.ip_user_files/sim_scripts -ip_user_files_dir D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.ip_user_files -ipstatic_source_dir D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.cache/compile_simlib/modelsim} {questa=D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.cache/compile_simlib/questa} {riviera=D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.cache/compile_simlib/riviera} {activehdl=D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run blk_mem_gen_0_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:1]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'blk_mem_gen_0'...
+[Fri Aug 10 13:27:32 2018] Launched blk_mem_gen_0_synth_1...
+Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/blk_mem_gen_0_synth_1/runme.log
+[Fri Aug 10 13:27:32 2018] Launched synth_1...
+Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:1]
+[Fri Aug 10 13:28:58 2018] Launched synth_1...
 Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
 launch_runs impl_1 -jobs 4
-[Thu Aug 09 10:02:21 2018] Launched impl_1...
+[Fri Aug 10 13:29:24 2018] Launched impl_1...
 Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
 launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Aug 09 10:03:06 2018] Launched impl_1...
+[Fri Aug 10 13:30:35 2018] Launched impl_1...
 Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
 open_hw
 connect_hw_server
@@ -71,28 +134,14 @@ WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
 WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
 reset_run synth_1
 launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
-[Thu Aug 09 10:05:27 2018] Launched synth_1...
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:1]
+[Fri Aug 10 13:32:48 2018] Launched synth_1...
 Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
 launch_runs impl_1 -jobs 4
-[Thu Aug 09 10:05:57 2018] Launched impl_1...
+[Fri Aug 10 13:33:19 2018] Launched impl_1...
 Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Digilent/210183739365A.
-Check cable connectivity and that the target board is powered up then
-use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
-ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183739365A
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183739365A
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
 launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Aug 09 10:06:43 2018] Launched impl_1...
+[Fri Aug 10 13:35:12 2018] Launched impl_1...
 Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
 set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
 set_property PROGRAM.FILE {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/top_module.bit} [lindex [get_hw_devices xc7a35t_0] 0]
@@ -108,474 +157,3 @@ WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
 WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
 WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
 WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
-[Thu Aug 09 10:08:56 2018] Launched synth_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 4
-[Thu Aug 09 10:09:24 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Aug 09 10:10:22 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROGRAM.FILE {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/top_module.bit} [lindex [get_hw_devices xc7a35t_0] 0]
-program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
-[Thu Aug 09 10:11:52 2018] Launched synth_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 4
-[Thu Aug 09 10:12:32 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Aug 09 10:13:25 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROGRAM.FILE {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/top_module.bit} [lindex [get_hw_devices xc7a35t_0] 0]
-program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
-[Thu Aug 09 10:14:53 2018] Launched synth_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 4
-[Thu Aug 09 10:15:21 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Aug 09 10:16:10 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROGRAM.FILE {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/top_module.bit} [lindex [get_hw_devices xc7a35t_0] 0]
-program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
-[Thu Aug 09 10:17:41 2018] Launched synth_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 4
-[Thu Aug 09 10:18:16 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Aug 09 10:19:02 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROGRAM.FILE {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/top_module.bit} [lindex [get_hw_devices xc7a35t_0] 0]
-program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
-[Thu Aug 09 10:20:31 2018] Launched synth_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 4
-[Thu Aug 09 10:21:04 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Aug 09 10:21:50 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROGRAM.FILE {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/top_module.bit} [lindex [get_hw_devices xc7a35t_0] 0]
-program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
-[Thu Aug 09 10:23:23 2018] Launched synth_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 4
-[Thu Aug 09 10:23:48 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Aug 09 10:24:36 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROGRAM.FILE {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/top_module.bit} [lindex [get_hw_devices xc7a35t_0] 0]
-program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
-[Thu Aug 09 10:26:08 2018] Launched synth_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 4
-[Thu Aug 09 10:26:43 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Aug 09 10:28:23 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROGRAM.FILE {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/top_module.bit} [lindex [get_hw_devices xc7a35t_0] 0]
-program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
-[Thu Aug 09 10:30:22 2018] Launched synth_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 4
-[Thu Aug 09 10:30:55 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Digilent/210183739365A.
-Check cable connectivity and that the target board is powered up then
-use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
-ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183739365A
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Aug 09 10:31:42 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183739365A
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROGRAM.FILE {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/top_module.bit} [lindex [get_hw_devices xc7a35t_0] 0]
-program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
-[Thu Aug 09 10:32:52 2018] Launched synth_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 4
-[Thu Aug 09 10:33:23 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Aug 09 10:34:14 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROGRAM.FILE {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/top_module.bit} [lindex [get_hw_devices xc7a35t_0] 0]
-program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
-[Thu Aug 09 10:37:08 2018] Launched synth_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
-[Thu Aug 09 10:37:28 2018] Launched synth_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 4
-[Thu Aug 09 10:38:18 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Aug 09 10:39:25 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROGRAM.FILE {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/top_module.bit} [lindex [get_hw_devices xc7a35t_0] 0]
-program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
-[Thu Aug 09 10:41:05 2018] Launched synth_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 4
-[Thu Aug 09 10:41:38 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Aug 09 10:42:32 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROGRAM.FILE {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/top_module.bit} [lindex [get_hw_devices xc7a35t_0] 0]
-program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
-[Thu Aug 09 10:44:17 2018] Launched synth_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 4
-[Thu Aug 09 10:44:53 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Aug 09 10:45:49 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROGRAM.FILE {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/top_module.bit} [lindex [get_hw_devices xc7a35t_0] 0]
-program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
-[Thu Aug 09 10:46:51 2018] Launched synth_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 4
-[Thu Aug 09 10:47:19 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Aug 09 10:48:04 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROGRAM.FILE {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/top_module.bit} [lindex [get_hw_devices xc7a35t_0] 0]
-program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
-[Thu Aug 09 10:49:07 2018] Launched synth_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 4
-[Thu Aug 09 10:49:52 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Aug 09 10:51:16 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROGRAM.FILE {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/top_module.bit} [lindex [get_hw_devices xc7a35t_0] 0]
-program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
-[Thu Aug 09 10:52:31 2018] Launched synth_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 4
-[Thu Aug 09 10:54:20 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Aug 09 11:01:29 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROGRAM.FILE {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/top_module.bit} [lindex [get_hw_devices xc7a35t_0] 0]
-program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
-[Thu Aug 09 11:03:18 2018] Launched synth_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 4
-[Thu Aug 09 11:04:05 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Aug 09 11:04:49 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROGRAM.FILE {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/top_module.bit} [lindex [get_hw_devices xc7a35t_0] 0]
-program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
-[Thu Aug 09 11:07:55 2018] Launched synth_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 4
-[Thu Aug 09 11:08:30 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Aug 09 11:09:20 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROGRAM.FILE {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/top_module.bit} [lindex [get_hw_devices xc7a35t_0] 0]
-program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
-[Thu Aug 09 11:13:27 2018] Launched synth_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 4
-[Thu Aug 09 11:13:51 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Aug 09 11:14:35 2018] Launched impl_1...
-Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
-set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROGRAM.FILE {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/top_module.bit} [lindex [get_hw_devices xc7a35t_0] 0]
-program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
-Resolution: 
-1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
-2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
-exit
-INFO: [Common 17-206] Exiting Vivado at Thu Aug 09 11:29:30 2018...
