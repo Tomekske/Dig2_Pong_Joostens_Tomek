@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date             : Fri Aug 10 21:26:53 2018
+| Date             : Fri Aug 10 23:34:39 2018
 | Host             : DESKTOP-JKG1DO6 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_module_power_routed.rpt -pb top_module_power_summary_routed.pb -rpx top_module_power_routed.rpx
 | Design           : top_module
@@ -50,13 +50,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        6 |       --- |             --- |
-| Slice Logic    |    <0.001 |      248 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      106 |     20800 |            0.51 |
-|   CARRY4       |    <0.001 |       23 |      8150 |            0.28 |
+| Slice Logic    |    <0.001 |      273 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      128 |     20800 |            0.62 |
+|   CARRY4       |    <0.001 |       20 |      8150 |            0.25 |
 |   Register     |    <0.001 |       76 |     41600 |            0.18 |
 |   F7/F8 Muxes  |    <0.001 |        3 |     32600 |           <0.01 |
 |   Others       |     0.000 |       16 |       --- |             --- |
-| Signals        |    <0.001 |      163 |       --- |             --- |
+| Signals        |    <0.001 |      190 |       --- |             --- |
 | Block RAM      |     0.002 |      0.5 |        50 |            1.00 |
 | MMCM           |     0.116 |        1 |         5 |           20.00 |
 | I/O            |    <0.001 |       34 |       106 |           32.08 |

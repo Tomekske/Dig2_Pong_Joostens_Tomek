@@ -137,16 +137,24 @@ begin
     process(vidon,clk60,btn_up,btn_down,btn_reset) begin
     if rising_edge(clk60) then                                           --paddle boven
             if btn_up = '1' and vidon = '1' then
-              R1 <= conv_std_logic_vector(conv_integer(R1)-1,11);
-        elsif btn_down = '1' and vidon = '1' then                         --paddle beneden
-                R1 <= conv_std_logic_vector(conv_integer(R1)+1,11); 
-    elsif btn_reset = '1' and vidon = '1' then                          --paddle reset
+              if R1 > "00001000110" then
+                R1 <= conv_std_logic_vector(conv_integer(R1)-1,11);
+              else
+                R1 <= "00001000110";
+                      -- 00011101100
+              end if;
+            elsif btn_down = '1' and vidon = '1' then                         --paddle beneden
+              if R1 < "00110010011" then
+                  R1 <= conv_std_logic_vector(conv_integer(R1)+1,11);
+               else
+                 R1 <= "00110010011";
+                        -- 00011101100
+            end if;    
+        elsif btn_reset = '1' and vidon = '1' then                          --paddle reset
                     R1 <=  "00011101100";
                     C1 <= "00000001000";          
             end if;
         end if;
-    
-
     end process;
     
 
