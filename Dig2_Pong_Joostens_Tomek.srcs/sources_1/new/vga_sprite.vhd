@@ -22,7 +22,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
-
+use IEEE.std_logic_arith.all;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -35,6 +35,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity vga_sprite is
 Port ( 
     clk: in std_logic;
+    clk60: in std_logic;
     vidon: in std_logic;
     hc : in std_logic_vector(9 downto 0);
     vc : in std_logic_vector(9 downto 0);
@@ -43,7 +44,11 @@ Port (
     rom_sprite_paddle: out std_logic_vector(3 downto 0);
     red : out std_logic_vector(3 downto 0);
     green : out std_logic_vector(3 downto 0);
-    blue : out std_logic_vector(3 downto 0)
+    blue : out std_logic_vector(3 downto 0);
+    
+    btn_up: in std_logic;
+    btn_down: in std_logic;
+    btn_reset: in std_logic
 );
 end vga_sprite;
 
@@ -54,7 +59,10 @@ constant hbp: std_logic_vector(9 downto 0) := "0010010000"; --144
 constant vbp: std_logic_vector(9 downto 0) := "0000011111"; --31
 constant w: integer := 16;
 constant h: integer := 16;
-signal C1, R1: std_logic_vector(10 downto 0);
+
+signal C1: std_logic_vector(10 downto 0) := "00000001000";
+signal R1: std_logic_vector(10 downto 0) := "00011101100";
+
 signal rom_addr, rom_pix: std_logic_vector(10 downto 0);
 signal spriteon, R, G, B: std_logic;
 
@@ -67,8 +75,22 @@ signal red_bg: STD_LOGIC_VECTOR (3 downto 0);                     -- rood
 signal green_bg : STD_LOGIC_VECTOR (3 downto 0);                   -- groen
 signal blue_bg : STD_LOGIC_VECTOR (3 downto 0);                   -- blauw
 
--- background
+
+
+-- constants
+constant vc_left_centerline: integer := 150;
+constant vc_rigt_centerline: integer := 775;
+constant vc_centerline: integer := ((vc_rigt_centerline - vc_left_centerline) / 2) + vc_left_centerline;
+
+constant hc_topline: integer := 100;
+constant hc_bottomline: integer := 450;
+constant hc_centerline: integer := ((hc_bottomline - hc_topline) / 2) + hc_topline;
+
+
+-- variables
 begin
+
+    -- background
     process(vidon) begin
         red_bg <= "0000";
         green_bg <= "0000";
@@ -76,27 +98,33 @@ begin
         
         if vidon = '1' then
             --centerline
-            if hc = 470 and (vc >= 100 and vc <= 450) then
+            if hc = vc_centerline and (vc >= hc_topline and vc <= hc_bottomline) then
                 red_bg <= "1111";
                 green_bg <= "1111";
                 blue_bg <= "1111";
             -- verticaal links    
-            elsif hc = 150 and (vc >= 100 and vc <= 450) then
+            elsif hc = vc_left_centerline and (vc >= hc_topline and vc <= hc_bottomline) then
                 red_bg <= "1111";
                 green_bg <= "1111";
                 blue_bg <= "1111";
             -- verticaal rechts    
-            elsif hc = 775 and (vc >= 100 and vc <= 450) then
+            elsif hc = vc_rigt_centerline and (vc >= hc_topline and vc <= hc_bottomline) then
                 red_bg <= "1111";
                 green_bg <= "1111";
                 blue_bg <= "1111";
+            -- horizontaal midden       
+            elsif vc = hc_centerline and (hc >= vc_left_centerline and hc <= vc_rigt_centerline) then
+                red_bg <= "1111";
+                green_bg <= "1111";
+                blue_bg <= "1111";
+                -- horizontaal beneden    
             -- horizontaal boven       
-            elsif vc = 100 and (hc >= 150 and hc <= 775) then
+            elsif vc = hc_topline and (hc >= vc_left_centerline and hc <= vc_rigt_centerline) then
                 red_bg <= "1111";
                 green_bg <= "1111";
                 blue_bg <= "1111";
             -- horizontaal beneden       
-            elsif vc = 450 and (hc >= 150 and hc <= 775) then
+            elsif vc = hc_bottomline and (hc >= vc_left_centerline and hc <= vc_rigt_centerline) then
                 red_bg <= "1111";
                 green_bg <= "1111";
                 blue_bg <= "1111";       
@@ -104,15 +132,37 @@ begin
         end if;
     end process;
     
-    --set C1 and R1 using switches
-    C1 <= "00" & SW(3 downto 0) & "00001";
-    R1 <= "00" & SW(7 downto 4) & "00001";
-    rom_addr <= vc - vbp - R1;
-    rom_pix <= hc - hbp - C1;
+   
+
+    process(vidon,clk60,btn_up,btn_down,btn_reset) begin
+    if rising_edge(clk60) then                                           --paddle boven
+            if btn_up = '1' and vidon = '1' then
+              R1 <= conv_std_logic_vector(conv_integer(R1)-1,11);
+        elsif btn_down = '1' and vidon = '1' then                         --paddle beneden
+                R1 <= conv_std_logic_vector(conv_integer(R1)+1,11); 
+    elsif btn_reset = '1' and vidon = '1' then                          --paddle reset
+                    R1 <=  "00011101100";
+                    C1 <= "00000001000";          
+            end if;
+        end if;
+    
+
+    end process;
+    
+
+
+        rom_addr <= vc - vbp - R1;
+         rom_pix <= hc - hbp - C1;
+
     rom_sprite_paddle <= rom_addr(3 downto 0);
     
     --Enable sprite video out when within the sprite region
     spriteon <= '1' when (((hc >= C1 + hbp) and (hc < C1 + hbp + w)) and ((vc >= R1 + vbp) and (vc < R1 + vbp + h))) else '0';
+    
+
+    
+    
+    
     process(spriteon, vidon, rom_pix, M)
         variable j: integer;
         

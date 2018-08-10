@@ -36,7 +36,6 @@ use IEEE.std_logic_unsigned.all;
 entity top_module is
   Port (
         clk: in STD_LOGIC;
-        btn: in STD_LOGIC;
         led: out STD_LOGIC_VECTOR (3 downto 0);
         sw : in STD_LOGIC_VECTOR (7 downto 0);
         an_in : in STD_LOGIC_VECTOR (3 downto 0);
@@ -49,7 +48,11 @@ entity top_module is
         
         vgaRed : out STD_LOGIC_VECTOR (3 downto 0);
         vgaGreen : out STD_LOGIC_VECTOR (3 downto 0);
-        vgaBlue : out STD_LOGIC_VECTOR (3 downto 0)
+        vgaBlue : out STD_LOGIC_VECTOR (3 downto 0);
+        btn_up: in std_logic;
+        btn_down: in std_logic;
+        btn_reset: in STD_LOGIC
+
         );
 end top_module;
 
@@ -130,6 +133,7 @@ end component;
 component vga_sprite is
   Port ( 
   clk: in std_logic;
+  clk60: in std_logic;
   vidon: in std_logic;
   hc : in std_logic_vector(9 downto 0);
   vc : in std_logic_vector(9 downto 0);
@@ -138,7 +142,11 @@ component vga_sprite is
   rom_sprite_paddle: out std_logic_vector(3 downto 0);
   red : out std_logic_vector(3 downto 0);
   green : out std_logic_vector(3 downto 0);
-  blue : out std_logic_vector(3 downto 0)
+  blue : out std_logic_vector(3 downto 0);
+  btn_up: in std_logic;
+  btn_down: in std_logic;
+  btn_reset: in STD_LOGIC
+
   );
 end component;
 
@@ -170,6 +178,24 @@ ATTRIBUTE SYN_BLACK_BOX : BOOLEAN;
 ATTRIBUTE SYN_BLACK_BOX OF clk_wiz_0 : COMPONENT IS TRUE;
 ATTRIBUTE BLACK_BOX_PAD_PIN : STRING;
 ATTRIBUTE BLACK_BOX_PAD_PIN OF clk_wiz_0 : COMPONENT IS "clk_in1,clk_out1,reset,locked";
+
+
+
+
+
+component debounce is
+    Port ( clk : in STD_LOGIC;
+           sig_in : in STD_LOGIC;
+           sig_out : out STD_LOGIC);
+end component debounce;
+
+
+component clock is
+    Port ( clk : in STD_LOGIC;
+           div : in STD_LOGIC_VECTOR (1 downto 0);
+           clk_slow : out STD_LOGIC);
+end component;
+
 -- ####################################################
 -- ####################################################
 
@@ -184,13 +210,15 @@ signal nhc, nvc: integer range 0 to 512;
 signal clk25: STD_LOGIC;
 signal M : STD_LOGIC_VECTOR (0 to 15);
 signal rom_sprite_paddle : STD_LOGIC_VECTOR (3 downto 0);
-
+signal clk60: std_logic;
 -- ####################################################
 -- ####################################################
 
 begin
 --clock: clock_div Port map(clk_in => clk,clk_out => div);
-cclock: clkdiv Port map(clk => clk,clr => clr,clk25 => div);
+--cclock: clkdiv Port map(clk => clk,clr => clr,clk25 => div);
+c33: clock Port map (clk => clk, div => "00", clk_slow => clk60);
+db: debounce Port map(clk => clk, sig_in => btn_up, sig_out => knop);
 
 seg: seg7 Port map(x => vvv,g_to_a => g_to_a, dp => dp);
 mux: mux21 Port map (sel => counter, an => an);
@@ -203,6 +231,6 @@ vga: vga_640x480 Port map(clk => clk25, clr => clr, hsync => Hsync, vsync => Vsy
 --background: layer_background Port map(vidon => vidon, hc =>nhc , vc => nvc, red => vgaRed, green => vgaGreen, blue => vgaBlue);
 tt: blk_mem_gen_0 PORT MAP ( clka => clk, addra => rom_sprite_paddle, douta => M );
 
-rr: vga_sprite Port Map(clk => clk, vidon => vidon,hc => hc,vc => vc,M => M,sw => sw,rom_sprite_paddle => rom_sprite_paddle,red => vgaRed,green => vgaGreen,blue => vgaBlue);
+rr: vga_sprite Port Map(clk => clk,clk60 => clk60, vidon => vidon,hc => hc,vc => vc,M => M,sw => sw,rom_sprite_paddle => rom_sprite_paddle,red => vgaRed,green => vgaGreen,blue => vgaBlue, btn_up => knop, btn_down => btn_down,btn_reset => btn_reset);
 
 end Behavioral;                                                                            

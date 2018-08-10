@@ -1,10 +1,10 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: Christophe Huybrechts
 -- 
--- Create Date: 05.10.2016 14:22:46
+-- Create Date: 29.09.2016 12:08:02
 -- Design Name: 
--- Module Name: clkdiv - Behavioral
+-- Module Name: Top - PacMan
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -20,10 +20,9 @@
 
 
 library IEEE;
-use IEEE.std_logic_1164.all;
+use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.all;
 use IEEE.std_logic_unsigned.all;
-
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -34,27 +33,36 @@ use IEEE.std_logic_unsigned.all;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity clkdiv is
+entity clock is
     Port ( clk : in STD_LOGIC;
-           clr : in STD_LOGIC;
-           clk25 : out STD_LOGIC);
-end clkdiv;
+           div : in STD_LOGIC_VECTOR (1 downto 0);
+           clk_slow : out STD_LOGIC);
+end clock;
 
-architecture Behavioral of clkdiv is
+architecture Behavioral of clock is
 
-signal q: STD_LOGIC_VECTOR(3 downto 0);
+signal i: integer range 0 to 25000000 := 1;
+signal int_clk: std_logic := '0';
+signal base: integer range 0 to 25000000 := 25000000;
+signal prev_div: std_logic := '0';
 
 begin
-    process (clk, clr)
-    begin
-        if clr = '1' then
-            q <= "0000";
-        elsif rising_edge(clk) then
-            q <= q + 1;
-        end if;
-    end process;
-
-    clk25 <= q(1);    --25 MHz
-
+process(clk, div) begin
+        if rising_edge (clk) then
+            i <= i + 1;
+            if (i = base) then
+                i <= 1;
+                int_clk <= not int_clk;
+            end if;
+            case (div) is
+                    when "00" => base <= 100000;
+                    when "01" => base <= 2400000;
+                    when "10" => base <= 200000;
+                    when "11" => base <= 3;
+                    when others => base <=250000;
+             end case;
+         end if;
+end process;
+clk_slow <= int_clk;
 
 end Behavioral;

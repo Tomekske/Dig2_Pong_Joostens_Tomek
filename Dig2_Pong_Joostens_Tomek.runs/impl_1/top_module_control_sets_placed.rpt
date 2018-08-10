@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date         : Fri Aug 10 13:33:43 2018
+| Date         : Fri Aug 10 21:26:33 2018
 | Host         : DESKTOP-JKG1DO6 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_module_control_sets_placed.rpt
 | Design       : top_module
@@ -22,8 +22,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |     4 |
-| Unused register locations in slices containing registers |    22 |
+| Number of unique control sets                            |     6 |
+| Unused register locations in slices containing registers |    36 |
 +----------------------------------------------------------+-------+
 
 
@@ -33,12 +33,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              24 |            8 |
+| No           | No                    | No                     |              30 |           15 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |              10 |            4 |
+| No           | Yes                   | No                     |              25 |            7 |
+| Yes          | No                    | No                     |              10 |            5 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |               0 |            0 |
+| Yes          | Yes                   | No                     |              11 |            4 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -48,10 +48,12 @@ Table of Contents
 +--------------------+---------------+------------------+------------------+----------------+
 |    Clock Signal    | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count |
 +--------------------+---------------+------------------+------------------+----------------+
-|  rr/R0             |               |                  |                1 |              1 |
-|  xxx/inst/clk_out1 | vga/vsenable  |                  |                4 |             10 |
-|  xxx/inst/clk_out1 |               |                  |                5 |             11 |
-|  clk_IBUF          |               |                  |                2 |             12 |
+|  vga/R0            |               |                  |                1 |              1 |
+|  xxx/inst/clk_out1 | vga/vsenable  |                  |                5 |             10 |
+|  c33/I2            | db/E[0]       | db/SR[0]         |                4 |             11 |
+|  xxx/inst/clk_out1 |               |                  |                4 |             11 |
+|  clk_IBUF_BUFG     |               |                  |               10 |             18 |
+|  clk_IBUF_BUFG     |               | c33/clear        |                7 |             25 |
 +--------------------+---------------+------------------+------------------+----------------+
 
 
@@ -60,8 +62,8 @@ Table of Contents
 +--------+-----------------------+
 | 1      |                     1 |
 | 10     |                     1 |
-| 11     |                     1 |
-| 12     |                     1 |
+| 11     |                     2 |
+| 16+    |                     2 |
 +--------+-----------------------+
 
 
