@@ -1,0 +1,2 @@
+blk_mem_gen_ball.v,verilog,xil_defaultlib,../../../../Dig2_Pong_Joostens_Tomek.srcs/sources_1/ip/blk_mem_gen_ball/sim/blk_mem_gen_ball.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

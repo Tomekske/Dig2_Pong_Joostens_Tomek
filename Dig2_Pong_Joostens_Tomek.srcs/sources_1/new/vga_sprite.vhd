@@ -34,21 +34,45 @@ use IEEE.std_logic_arith.all;
 
 entity vga_sprite is
 Port ( 
-    clk: in std_logic;
-    clk60: in std_logic;
-    vidon: in std_logic;
-    hc : in std_logic_vector(9 downto 0);
-    vc : in std_logic_vector(9 downto 0);
-    M: in std_logic_vector(0 to 15);
-    sw: in std_logic_vector(7 downto 0);
-    rom_sprite_paddle: out std_logic_vector(3 downto 0);
-    red : out std_logic_vector(3 downto 0);
-    green : out std_logic_vector(3 downto 0);
-    blue : out std_logic_vector(3 downto 0);
+--    clk: in std_logic;
+--    clk60: in std_logic;
+--    vidon: in std_logic;
+--    hc : in std_logic_vector(9 downto 0);
+--    vc : in std_logic_vector(9 downto 0);
     
-    btn_up: in std_logic;
-    btn_down: in std_logic;
-    btn_reset: in std_logic
+--    M: in std_logic_vector(0 to 15);
+--    M_ball: in std_logic_vector(0 to 15);
+    
+--    sw: in std_logic_vector(7 downto 0);
+    
+--    rom_sprite_paddle: out std_logic_vector(3 downto 0);
+--    rom_sprite_ball: out std_logic_vector(3 downto 0);
+    
+--    red : out std_logic_vector(3 downto 0);
+--    green : out std_logic_vector(3 downto 0);
+--    blue : out std_logic_vector(3 downto 0);
+    
+--    btn_up: in std_logic;
+--    btn_down: in std_logic;
+--    btn_reset: in std_logic
+
+
+   clk: in std_logic;
+  clk60: in std_logic;
+  vidon: in std_logic;
+  hc : in std_logic_vector(9 downto 0);
+  vc : in std_logic_vector(9 downto 0);
+  M: in std_logic_vector(0 to 15);
+  M_ball: in std_logic_vector(0 to 15);
+  sw: in std_logic_vector(7 downto 0);
+  rom_sprite_paddle: out std_logic_vector(3 downto 0);
+  rom_sprite_ball: out std_logic_vector(3 downto 0);
+  red : out std_logic_vector(3 downto 0);
+  green : out std_logic_vector(3 downto 0);
+  blue : out std_logic_vector(3 downto 0);
+  btn_up: in std_logic;
+  btn_down: in std_logic;
+  btn_reset: in STD_LOGIC
 );
 end vga_sprite;
 
@@ -63,6 +87,9 @@ constant h: integer := 16;
 signal C1: std_logic_vector(10 downto 0) := "00000001000";
 signal R1: std_logic_vector(10 downto 0) := "00011101100";
 
+signal C_ball: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(310),11);
+signal R_ball: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(236),11);
+
 signal rom_addr, rom_pix: std_logic_vector(10 downto 0);
 signal spriteon, R, G, B: std_logic;
 
@@ -70,12 +97,19 @@ signal red_paddle: STD_LOGIC_VECTOR (3 downto 0);                     -- rood
 signal green_paddle : STD_LOGIC_VECTOR (3 downto 0);                   -- groen
 signal blue_paddle : STD_LOGIC_VECTOR (3 downto 0);                   -- blauw
 
+signal red_ball: STD_LOGIC_VECTOR (3 downto 0);                     -- rood
+signal green_ball : STD_LOGIC_VECTOR (3 downto 0);                   -- groen
+signal blue_ball : STD_LOGIC_VECTOR (3 downto 0);                   -- blauw
+
+signal rom_addr_ball, rom_pix_ball: std_logic_vector(10 downto 0);
+signal spriteon_ball, RB, GB, BB: std_logic;
 
 signal red_bg: STD_LOGIC_VECTOR (3 downto 0);                     -- rood
 signal green_bg : STD_LOGIC_VECTOR (3 downto 0);                   -- groen
 signal blue_bg : STD_LOGIC_VECTOR (3 downto 0);                   -- blauw
 
-
+constant wb: integer := 16;
+constant hb: integer := 16;
 
 -- constants
 constant vc_left_centerline: integer := 150;
@@ -157,20 +191,24 @@ begin
         end if;
     end process;
     
+--    process(vidon,clk60) begin
+--        R_ball <= conv_std_logic_vector(conv_integer(200)-1,11); 
+--        C_ball <= conv_std_logic_vector(conv_integer(200)-1,11); 
+--    end process;
 
-
-        rom_addr <= vc - vbp - R1;
-         rom_pix <= hc - hbp - C1;
-
-    rom_sprite_paddle <= rom_addr(3 downto 0);
-    
+    rom_addr <= vc - vbp - R1;
+    rom_pix <= hc - hbp - C1;  
+    rom_sprite_paddle <= rom_addr(3 downto 0);   
     --Enable sprite video out when within the sprite region
     spriteon <= '1' when (((hc >= C1 + hbp) and (hc < C1 + hbp + w)) and ((vc >= R1 + vbp) and (vc < R1 + vbp + h))) else '0';
     
+    rom_addr_ball <= vc - vbp - R_ball;
+    rom_pix_ball <= hc - hbp - C_ball;  
+    rom_sprite_ball <= rom_addr_ball(3 downto 0);   
+    --Enable sprite video out when within the sprite region
+    spriteon_ball <= '1' when (((hc >= C_ball + hbp) and (hc < C_ball + hbp + wb)) and ((vc >= R_ball + vbp) and (vc < R_ball + vbp + hb))) else '0';
 
-    
-    
-    
+   
     process(spriteon, vidon, rom_pix, M)
         variable j: integer;
         
@@ -190,11 +228,30 @@ begin
         end if;
     end process;
     
+    process(spriteon_ball, vidon, rom_pix_ball, M_ball)
+        variable k: integer;
+        
+        begin
+        red_ball <= "0000";
+        green_ball <= "0000";
+        blue_ball <= "0000";
+        
+        if spriteon_ball = '1' and vidon = '1' then
+            k := conv_integer(rom_pix_ball);
+            RB <= M_ball(k);
+            GB <= M_ball(k);
+            BB <= M_ball(k);
+            red_ball <= RB & RB & RB & RB;
+            green_ball <= GB & GB & GB & GB;
+            blue_ball <= BB & BB & BB & BB;
+        end if;
+    end process;    
+    
     process(clk) begin
         if rising_edge(clk) then
-            red <= red_paddle or red_bg;
-            green <= green_paddle or green_bg;
-            blue <= blue_paddle or blue_bg;
+            red <= red_paddle or red_bg or red_ball;
+            green <= green_paddle or green_bg or green_ball;
+            blue <= blue_paddle or blue_bg or blue_ball;
         end if;
    end process;
 end Behavioral;
