@@ -72,7 +72,8 @@ Port (
   blue : out std_logic_vector(3 downto 0);
   btn_up: in std_logic;
   btn_down: in std_logic;
-  btn_reset: in STD_LOGIC
+  btn_reset: in STD_LOGIC;
+  btn_start: in STD_LOGIC
 );
 end vga_sprite;
 
@@ -84,11 +85,19 @@ constant vbp: std_logic_vector(9 downto 0) := "0000011111"; --31
 constant w: integer := 16;
 constant h: integer := 16;
 
-signal C1: std_logic_vector(10 downto 0) := "00000001000";
-signal R1: std_logic_vector(10 downto 0) := "00011101100";
+constant R_ball_start: integer := 236;
+constant c_ball_start: integer := 310;
 
-signal C_ball: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(310),11);
-signal R_ball: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(236),11);
+constant ball_max_left: integer := 2;
+constant ball_max_right: integer := 620;
+
+signal C1: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(8),11);
+signal R1: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(236),11);
+
+--signal C_ball: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(310),11);
+signal C_ball: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(c_ball_start),11);
+signal R_ball: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(r_ball_start),11);
+--signal R_ball: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(8),11);
 
 signal rom_addr, rom_pix: std_logic_vector(10 downto 0);
 signal spriteon, R, G, B: std_logic;
@@ -120,6 +129,15 @@ constant hc_topline: integer := 100;
 constant hc_bottomline: integer := 450;
 constant hc_centerline: integer := ((hc_bottomline - hc_topline) / 2) + hc_topline;
 
+constant ball_max_top: integer := 66;
+constant ball_max_bottom: integer := 408;
+
+signal ball_fall: std_logic := '1';
+signal ball_down: std_logic := '1';
+signal ball_up: std_logic := '1';
+signal reset_paddle: std_logic := '1';
+signal reset_ball: std_logic := '1';
+signal reset: std_logic := '1';
 
 -- variables
 begin
@@ -169,26 +187,72 @@ begin
    
 
     process(vidon,clk60,btn_up,btn_down,btn_reset) begin
-    if rising_edge(clk60) then                                           --paddle boven
+        if btn_reset = '1' then                          --paddle reset
+            R1<=  "00011101100";
+            C1 <= "00000001000";   
+--            reset_paddle <= '1';
+--            reset <= '1';
+        end if;
+
+        if rising_edge(clk60) then                                           --paddle boven
             if btn_up = '1' and vidon = '1' then
-              if R1 > "00001000110" then
-                R1 <= conv_std_logic_vector(conv_integer(R1)-1,11);
-              else
-                R1 <= "00001000110";
-                      -- 00011101100
-              end if;
+                if R1 > "00001000110" then
+                    R1 <= conv_std_logic_vector(conv_integer(R1)-1,11);
+                else
+                    R1 <= "00001000110";
+        -- 00011101100
+                end if;
             elsif btn_down = '1' and vidon = '1' then                         --paddle beneden
-              if R1 < "00110010011" then
-                  R1 <= conv_std_logic_vector(conv_integer(R1)+1,11);
-               else
-                 R1 <= "00110010011";
-                        -- 00011101100
-            end if;    
-        elsif btn_reset = '1' and vidon = '1' then                          --paddle reset
-                    R1 <=  "00011101100";
-                    C1 <= "00000001000";          
+                if R1 < "00110010011" then
+                    R1 <= conv_std_logic_vector(conv_integer(R1)+1,11);
+                else
+                    R1 <= "00110010011";
+        -- 00011101100
+                end if;
             end if;
         end if;
+    end process;
+    
+    process(btn_reset) begin
+    if btn_reset = '1' and reset_paddle ='1' and reset_ball = '1' then                          --paddle reset
+            reset <= '0';
+    end if;
+    end process;
+    
+    
+    
+    process(vidon,clk60,btn_start) begin
+        if btn_start = '1' then
+            ball_fall <= '0';
+            ball_down <= '0';
+            
+        end if;
+    
+        if rising_edge(clk60) then 
+            if btn_reset = '1' then                          --paddle reset
+                ball_down <= '1';
+                ball_up <= '1';  
+                ball_fall <= '1';  
+                R_ball <=  conv_std_logic_vector(conv_integer(236),11);
+                C_ball <= conv_std_logic_vector(conv_integer(310),11);   
+   
+            end if;
+            if  vidon = '1' and ball_fall = '0' then
+                if R_ball < (conv_std_logic_vector(conv_integer(ball_max_bottom),11)) and (ball_down = '0') then
+                    R_ball <= conv_std_logic_vector(conv_integer(R_ball)+1,11);
+                elsif R_ball >= (conv_std_logic_vector(conv_integer(ball_max_bottom),11))and (ball_down = '0') then
+                    ball_up <= '0';
+                    ball_down <= '1';
+
+                elsif R_ball >= (conv_std_logic_vector(conv_integer(ball_max_top),11)) and (ball_up = '0') then
+                    R_ball <= conv_std_logic_vector(conv_integer(R_ball)-1,11);
+                elsif R_ball <= (conv_std_logic_vector(conv_integer(ball_max_top),11)) and (ball_up = '0') then
+                    ball_up <= '1';
+                ball_down <= '0';                
+               end if;
+
+            end if;                                          
+        end if;    
     end process;
     
 --    process(vidon,clk60) begin

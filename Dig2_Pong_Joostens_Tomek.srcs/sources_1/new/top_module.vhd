@@ -51,8 +51,8 @@ entity top_module is
         vgaBlue : out STD_LOGIC_VECTOR (3 downto 0);
         btn_up: in std_logic;
         btn_down: in std_logic;
-        btn_reset: in STD_LOGIC
-
+        btn_reset: in STD_LOGIC;
+        btn_start:  in STD_LOGIC
         );
 end top_module;
 
@@ -173,7 +173,8 @@ component vga_sprite is
  blue : out std_logic_vector(3 downto 0);
  btn_up: in std_logic;
  btn_down: in std_logic;
- btn_reset: in STD_LOGIC
+ btn_reset: in STD_LOGIC;
+ btn_start: in STD_LOGIC
 
   );
 end component;
@@ -279,7 +280,7 @@ rr: vga_sprite Port Map(clk => clk,clk60 => clk60,
                         sw => sw,
                         rom_sprite_paddle => rom_sprite_paddle, rom_sprite_ball => rom_sprite_ball,
                         red => vgaRed,green => vgaGreen,blue => vgaBlue, 
-                        btn_up => knop, btn_down => btn_down,btn_reset => btn_reset);
+                        btn_up => knop, btn_down => btn_down,btn_reset => btn_reset, btn_start => btn_start);
 
 
 end Behavioral;                                                                            
