@@ -255,7 +255,7 @@ signal clk60: std_logic;
 begin
 --clock: clock_div Port map(clk_in => clk,clk_out => div);
 --cclock: clkdiv Port map(clk => clk,clr => clr,clk25 => div);
-c33: clock Port map (clk => clk, div => "00", clk_slow => clk60);
+c33: clock Port map (clk => clk, div => "01", clk_slow => clk60);
 db: debounce Port map(clk => clk, sig_in => btn_up, sig_out => knop);
 
 seg: seg7 Port map(x => vvv,g_to_a => g_to_a, dp => dp);

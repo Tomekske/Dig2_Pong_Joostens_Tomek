@@ -2,8 +2,8 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
 # IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
-# Start of session at: Sat Aug 11 10:59:20 2018
-# Process ID: 15780
+# Start of session at: Sun Aug 12 13:59:33 2018
+# Process ID: 16036
 # Current directory: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/blk_mem_gen_ball_synth_1
 # Command line: vivado.exe -log blk_mem_gen_ball.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source blk_mem_gen_ball.tcl
 # Log file: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/blk_mem_gen_ball_synth_1/blk_mem_gen_ball.vds

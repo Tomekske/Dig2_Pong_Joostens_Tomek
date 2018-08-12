@@ -1,0 +1,661 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Sun Aug 12 14:25:21 2018
+# Process ID: 17776
+# Current directory: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1
+# Command line: vivado.exe -log clock.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source clock.tcl -notrace
+# Log file: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/clock.vdi
+# Journal file: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source clock.tcl -notrace
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.4
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [D:/Programs/Basys3_Master.xdc]
+WARNING: [Vivado 12-507] No nets matched 'btn_up_IBUF'. [D:/Programs/Basys3_Master.xdc:10]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:10]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'btn_start_IBUF'. [D:/Programs/Basys3_Master.xdc:11]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:11]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'btn_reset_IBUF'. [D:/Programs/Basys3_Master.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Designutils 20-1307] Command 'net_nets' is not supported in the xdc constraint file. [D:/Programs/Basys3_Master.xdc:13]
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [D:/Programs/Basys3_Master.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [D:/Programs/Basys3_Master.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [D:/Programs/Basys3_Master.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [D:/Programs/Basys3_Master.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [D:/Programs/Basys3_Master.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [D:/Programs/Basys3_Master.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [D:/Programs/Basys3_Master.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [D:/Programs/Basys3_Master.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [D:/Programs/Basys3_Master.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [D:/Programs/Basys3_Master.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [D:/Programs/Basys3_Master.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [D:/Programs/Basys3_Master.xdc:26]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:26]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [D:/Programs/Basys3_Master.xdc:27]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:27]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [D:/Programs/Basys3_Master.xdc:28]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:28]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [D:/Programs/Basys3_Master.xdc:29]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:29]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [D:/Programs/Basys3_Master.xdc:30]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:30]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[8]'. [D:/Programs/Basys3_Master.xdc:31]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:31]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[8]'. [D:/Programs/Basys3_Master.xdc:32]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:32]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [D:/Programs/Basys3_Master.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [D:/Programs/Basys3_Master.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [D:/Programs/Basys3_Master.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [D:/Programs/Basys3_Master.xdc:53]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:53]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[2]'. [D:/Programs/Basys3_Master.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:54]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[2]'. [D:/Programs/Basys3_Master.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'g_to_a[0]'. [D:/Programs/Basys3_Master.xdc:85]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:85]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'g_to_a[0]'. [D:/Programs/Basys3_Master.xdc:86]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:86]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'g_to_a[1]'. [D:/Programs/Basys3_Master.xdc:87]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:87]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'g_to_a[1]'. [D:/Programs/Basys3_Master.xdc:88]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:88]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'g_to_a[2]'. [D:/Programs/Basys3_Master.xdc:89]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:89]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'g_to_a[2]'. [D:/Programs/Basys3_Master.xdc:90]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:90]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'g_to_a[3]'. [D:/Programs/Basys3_Master.xdc:91]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:91]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'g_to_a[3]'. [D:/Programs/Basys3_Master.xdc:92]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:92]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'g_to_a[4]'. [D:/Programs/Basys3_Master.xdc:93]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:93]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'g_to_a[4]'. [D:/Programs/Basys3_Master.xdc:94]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:94]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'g_to_a[5]'. [D:/Programs/Basys3_Master.xdc:95]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:95]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'g_to_a[5]'. [D:/Programs/Basys3_Master.xdc:96]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:96]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'g_to_a[6]'. [D:/Programs/Basys3_Master.xdc:97]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:97]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'g_to_a[6]'. [D:/Programs/Basys3_Master.xdc:98]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:98]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dp'. [D:/Programs/Basys3_Master.xdc:100]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:100]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dp'. [D:/Programs/Basys3_Master.xdc:101]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:101]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[0]'. [D:/Programs/Basys3_Master.xdc:103]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:103]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[0]'. [D:/Programs/Basys3_Master.xdc:104]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:104]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[1]'. [D:/Programs/Basys3_Master.xdc:105]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:105]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[1]'. [D:/Programs/Basys3_Master.xdc:106]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:106]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[2]'. [D:/Programs/Basys3_Master.xdc:107]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:107]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[2]'. [D:/Programs/Basys3_Master.xdc:108]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:108]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[3]'. [D:/Programs/Basys3_Master.xdc:109]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:109]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[3]'. [D:/Programs/Basys3_Master.xdc:110]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:110]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btn_reset'. [D:/Programs/Basys3_Master.xdc:114]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:114]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btn_reset'. [D:/Programs/Basys3_Master.xdc:115]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:115]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btn_up'. [D:/Programs/Basys3_Master.xdc:116]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:116]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btn_up'. [D:/Programs/Basys3_Master.xdc:117]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:117]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btn_start'. [D:/Programs/Basys3_Master.xdc:120]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:120]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btn_start'. [D:/Programs/Basys3_Master.xdc:121]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:121]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btn_down'. [D:/Programs/Basys3_Master.xdc:122]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:122]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btn_down'. [D:/Programs/Basys3_Master.xdc:123]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:123]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaRed[0]'. [D:/Programs/Basys3_Master.xdc:239]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:239]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaRed[0]'. [D:/Programs/Basys3_Master.xdc:240]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:240]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaRed[1]'. [D:/Programs/Basys3_Master.xdc:241]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:241]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaRed[1]'. [D:/Programs/Basys3_Master.xdc:242]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:242]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaRed[2]'. [D:/Programs/Basys3_Master.xdc:243]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:243]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaRed[2]'. [D:/Programs/Basys3_Master.xdc:244]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:244]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaRed[3]'. [D:/Programs/Basys3_Master.xdc:245]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:245]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaRed[3]'. [D:/Programs/Basys3_Master.xdc:246]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:246]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaBlue[0]'. [D:/Programs/Basys3_Master.xdc:247]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:247]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaBlue[0]'. [D:/Programs/Basys3_Master.xdc:248]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:248]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaBlue[1]'. [D:/Programs/Basys3_Master.xdc:249]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:249]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaBlue[1]'. [D:/Programs/Basys3_Master.xdc:250]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:250]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaBlue[2]'. [D:/Programs/Basys3_Master.xdc:251]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:251]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaBlue[2]'. [D:/Programs/Basys3_Master.xdc:252]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:252]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaBlue[3]'. [D:/Programs/Basys3_Master.xdc:253]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:253]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaBlue[3]'. [D:/Programs/Basys3_Master.xdc:254]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:254]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaGreen[0]'. [D:/Programs/Basys3_Master.xdc:255]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:255]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaGreen[0]'. [D:/Programs/Basys3_Master.xdc:256]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:256]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaGreen[1]'. [D:/Programs/Basys3_Master.xdc:257]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:257]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaGreen[1]'. [D:/Programs/Basys3_Master.xdc:258]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:258]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaGreen[2]'. [D:/Programs/Basys3_Master.xdc:259]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:259]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaGreen[2]'. [D:/Programs/Basys3_Master.xdc:260]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:260]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaGreen[3]'. [D:/Programs/Basys3_Master.xdc:261]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:261]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'vgaGreen[3]'. [D:/Programs/Basys3_Master.xdc:262]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:262]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Hsync'. [D:/Programs/Basys3_Master.xdc:263]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:263]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Hsync'. [D:/Programs/Basys3_Master.xdc:264]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:264]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vsync'. [D:/Programs/Basys3_Master.xdc:265]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:265]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Vsync'. [D:/Programs/Basys3_Master.xdc:266]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Programs/Basys3_Master.xdc:266]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [D:/Programs/Basys3_Master.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Vivado_Tcl 4-424] Cannot write hardware definition file as there are no IPI block design hardware handoff files present
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.341 . Memory (MB): peak = 469.371 ; gain = 10.141
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Starting Logic Optimization Task
+Implement Debug Cores | Checksum: 21fc0fef9
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: bf409621
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 950.641 ; gain = 0.000
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-10] Eliminated 0 cells.
+Phase 2 Constant propagation | Checksum: bf409621
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 950.641 ; gain = 0.000
+
+Phase 3 Sweep
+INFO: [Opt 31-12] Eliminated 24 unconnected nets.
+INFO: [Opt 31-11] Eliminated 0 unconnected cells.
+Phase 3 Sweep | Checksum: 1f3eac9df
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 950.641 ; gain = 0.000
+
+Phase 4 BUFG optimization
+INFO: [Opt 31-12] Eliminated 0 unconnected nets.
+INFO: [Opt 31-11] Eliminated 0 unconnected cells.
+Phase 4 BUFG optimization | Checksum: 1f3eac9df
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 950.641 ; gain = 0.000
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 950.641 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 1f3eac9df
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 950.641 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 1f3eac9df
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 950.641 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+23 Infos, 87 Warnings, 88 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 950.641 ; gain = 491.410
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 950.641 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/clock_opt.dcp' has been generated.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/clock_drc_opted.rpt.
+INFO: [Chipscope 16-241] No debug cores found in the current design.
+Before running the implement_debug_core command, either use the Set Up Debug wizard (GUI mode)
+or use the create_debug_core and connect_debug_core Tcl commands to insert debug cores into the design.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 950.641 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 950.641 ; gain = 0.000
+
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 172c04e3d
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.462 . Memory (MB): peak = 972.793 ; gain = 22.152
+
+Phase 1.2 Build Placer Netlist Model
+Phase 1.2 Build Placer Netlist Model | Checksum: 17fbad87f
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.495 . Memory (MB): peak = 972.793 ; gain = 22.152
+
+Phase 1.3 Constrain Clocks/Macros
+Phase 1.3 Constrain Clocks/Macros | Checksum: 17fbad87f
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.496 . Memory (MB): peak = 972.793 ; gain = 22.152
+Phase 1 Placer Initialization | Checksum: 17fbad87f
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.498 . Memory (MB): peak = 972.793 ; gain = 22.152
+
+Phase 2 Global Placement
+Phase 2 Global Placement | Checksum: 262cbf77a
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.576 . Memory (MB): peak = 972.793 ; gain = 22.152
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 262cbf77a
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.579 . Memory (MB): peak = 972.793 ; gain = 22.152
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1f67d3469
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.598 . Memory (MB): peak = 972.793 ; gain = 22.152
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 1bf38ab93
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.603 . Memory (MB): peak = 972.793 ; gain = 22.152
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 1bf38ab93
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.604 . Memory (MB): peak = 972.793 ; gain = 22.152
+
+Phase 3.5 Timing Path Optimizer
+Phase 3.5 Timing Path Optimizer | Checksum: 1e1555629
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.607 . Memory (MB): peak = 972.793 ; gain = 22.152
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: 1c997881c
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.667 . Memory (MB): peak = 972.793 ; gain = 22.152
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 199f30e21
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.669 . Memory (MB): peak = 972.793 ; gain = 22.152
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 199f30e21
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.671 . Memory (MB): peak = 972.793 ; gain = 22.152
+Phase 3 Detail Placement | Checksum: 199f30e21
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.673 . Memory (MB): peak = 972.793 ; gain = 22.152
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=5.819. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 13d175088
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.700 . Memory (MB): peak = 972.793 ; gain = 22.152
+Phase 4.1 Post Commit Optimization | Checksum: 13d175088
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.702 . Memory (MB): peak = 972.793 ; gain = 22.152
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 13d175088
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.706 . Memory (MB): peak = 972.793 ; gain = 22.152
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 13d175088
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.707 . Memory (MB): peak = 972.793 ; gain = 22.152
+
+Phase 4.4 Final Placement Cleanup
+Phase 4.4 Final Placement Cleanup | Checksum: 1b0b080cc
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.709 . Memory (MB): peak = 972.793 ; gain = 22.152
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1b0b080cc
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.710 . Memory (MB): peak = 972.793 ; gain = 22.152
+Ending Placer Task | Checksum: 17444ec7f
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.713 . Memory (MB): peak = 972.793 ; gain = 22.152
+INFO: [Common 17-83] Releasing license: Implementation
+39 Infos, 87 Warnings, 88 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 972.793 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/clock_placed.dcp' has been generated.
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 972.793 ; gain = 0.000
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 972.793 ; gain = 0.000
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 972.793 ; gain = 0.000
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+Checksum: PlaceDB: 8776e40d ConstDB: 0 ShapeSum: ecce0872 RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 11cfbbacb
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 11cfbbacb
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 11cfbbacb
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 11cfbbacb
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 190ebd266
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.801  | TNS=0.000  | WHS=-0.052 | THS=-0.066 |
+
+Phase 2 Router Initialization | Checksum: 1e24e3f62
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: ea8eefe6
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+
+Phase 4.1.1 Update Timing
+Phase 4.1.1 Update Timing | Checksum: eb19bfb1
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.405  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: eb19bfb1
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+Phase 4 Rip-up And Reroute | Checksum: eb19bfb1
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: eb19bfb1
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: eb19bfb1
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+Phase 5 Delay and Skew Optimization | Checksum: eb19bfb1
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 1a6875eb5
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.499  | TNS=0.000  | WHS=0.248  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 1a6875eb5
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+Phase 6 Post Hold Fix | Checksum: 1a6875eb5
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.00821175 %
+  Global Horizontal Routing Utilization  = 0.0054659 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 1a6875eb5
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 1a6875eb5
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 1bb0d8b6e
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=5.499  | TNS=0.000  | WHS=0.248  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 1bb0d8b6e
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+52 Infos, 87 Warnings, 88 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:15 . Memory (MB): peak = 1085.465 ; gain = 112.672
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1085.465 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/clock_routed.dcp' has been generated.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/clock_drc_routed.rpt.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/clock_methodology_drc_routed.rpt.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Command: report_power -file clock_power_routed.rpt -pb clock_power_summary_routed.pb -rpx clock_power_routed.rpx
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+62 Infos, 87 Warnings, 88 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [Common 17-206] Exiting Vivado at Sun Aug 12 14:25:54 2018...

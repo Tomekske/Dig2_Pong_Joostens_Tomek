@@ -1,0 +1,101 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Sun Aug 12 13:59:15 2018
+# Process ID: 17376
+# Current directory: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8104 D:\Programs\Developing\Dig2_Pong_Joostens_Tomek\Dig2_Pong_Joostens_Tomek.xpr
+# Log file: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/vivado.log
+# Journal file: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/joost/OneDrive/Bureaublad/Dig2_Pong_Joostens_Tomek-master' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.4/data/ip'.
+reset_run clk_wiz_0_synth_1
+reset_run blk_mem_gen_0_synth_1
+reset_run blk_mem_gen_ball_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/clk_wiz_0.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/clk_wiz_0.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/clock.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/clock.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/clock_div.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/clock_div.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/debounce.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/debounce.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/layer_background.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/mux21.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/mux21.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/seg7.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/seg7.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_640x480.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_640x480.vhd:1]
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd" into library xil_defaultlib [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:1]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'blk_mem_gen_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'blk_mem_gen_ball'...
+[Sun Aug 12 13:59:31 2018] Launched clk_wiz_0_synth_1, blk_mem_gen_0_synth_1, blk_mem_gen_ball_synth_1...
+Run output will be captured here:
+clk_wiz_0_synth_1: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/clk_wiz_0_synth_1/runme.log
+blk_mem_gen_0_synth_1: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/blk_mem_gen_0_synth_1/runme.log
+blk_mem_gen_ball_synth_1: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/blk_mem_gen_ball_synth_1/runme.log
+[Sun Aug 12 13:59:32 2018] Launched synth_1...
+Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Sun Aug 12 14:00:05 2018] Launched impl_1...
+Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Aug 12 14:01:39 2018] Launched impl_1...
+Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Aug 12 14:02:21 2018] Launched impl_1...
+Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
+reset_run impl_1 -prev_step 
+WARNING: [Vivado 12-1017] Problems encountered:
+1. PID not specified
+
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2016.4
+  **** Build date : Jan 23 2017-19:37:29
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 864.152 ; gain = 0.000
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183739365A
+current_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run impl_1 -prev_step 
+WARNING: [Vivado 12-1017] Problems encountered:
+1. PID not specified
+
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Aug 12 14:04:56 2018] Launched impl_1...
+Run output will be captured here: D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROGRAM.FILE {D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/impl_1/top_module.bit} [lindex [get_hw_devices xc7a35t_0] 0]
+program_hw_devices [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+WARNING: [Labtoolstcl 44-130] No matching hw_ilas were found.
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Aug 12 14:06:39 2018...
