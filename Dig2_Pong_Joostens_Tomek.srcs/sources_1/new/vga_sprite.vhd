@@ -253,18 +253,10 @@ begin
             end if;
         -- logic       
             if  vidon = '1' and ball_fall = '0' then
---                    case (direction) is
---                        when "0000" => q3 <= '0';
---                        when "0001" => q1 <= '0';
---                        when "0010" => q2 <= '0';
---                        when "0011" => q4 <= '0';
---                        when "0101" => qm <= '0';
---                        when others => q4 <= '0';
---                    end case;
                     if qml = '0' then
                         X_ball <= conv_std_logic_vector(conv_integer(X_ball) - 1,11);
                     elsif qmr = '0' then
-                            X_ball <= conv_std_logic_vector(conv_integer(X_ball) + 1,11);
+                        X_ball <= conv_std_logic_vector(conv_integer(X_ball) + 1,11);
                     elsif q1 = '0' then
                                 if Y_ball >= conv_std_logic_vector(conv_integer(ball_max_top),11) and X_ball <= conv_std_logic_vector(conv_integer(ball_max_right),11)then
                                     X_ball <= conv_std_logic_vector(conv_integer(X_ball) + 1,11);
@@ -282,7 +274,6 @@ begin
                                     q2 <= '1';
                                     
                                 end if;
-
                    end if;              
                     if qml ='0' and X_ball <= X_paddle and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle)+ paddle_offset,11) then
                             if  X_ball <= X_paddle and Y_ball = Y_paddle then
@@ -298,8 +289,20 @@ begin
                                     qml <= '1';
                                     qmr <= '1';
                                     q1 <= '1';
-                                    q2 <= '0';
+                                    q2 <= '0';                      
+
                             end if;
+
+                    elsif (qml ='0') and (X_ball < (conv_std_logic_vector(conv_integer(X_paddle_start),11))) then
+                        ball_fall <= '1';  
+                        Y_ball <=  conv_std_logic_vector(conv_integer(Y_ball_start),11);
+                        X_ball <= conv_std_logic_vector(conv_integer(X_ball_start),11);
+                        q1 <= '1';             
+                        q2 <= '1';                  
+                        q3 <= '1';             
+                        q1 <= '1';                  
+                        qml <= '1';             
+                        qmr <= '1';
                     end if;
             end if; 
         end if;
