@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date         : Sun Aug 12 20:33:06 2018
+| Date         : Mon Aug 13 13:45:06 2018
 | Host         : DESKTOP-JKG1DO6 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_module_methodology_drc_routed.rpt -rpx top_module_methodology_drc_routed.rpx
 | Design       : top_module
@@ -23,14 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 45
+             Violations found: 59
 +-----------+----------+----------------------------------------------------+------------+
 | Rule      | Severity | Description                                        | Violations |
 +-----------+----------+----------------------------------------------------+------------+
 | TIMING-4  | Warning  | Invalid primary clock redefinition on a clock tree | 1          |
 | TIMING-6  | Warning  | No common primary clock between related clocks     | 1          |
 | TIMING-7  | Warning  | No common node between related clocks              | 1          |
-| TIMING-17 | Warning  | Non-clocked sequential cell                        | 24         |
+| TIMING-17 | Warning  | Non-clocked sequential cell                        | 38         |
 | TIMING-18 | Warning  | Missing input or output delay                      | 15         |
 | TIMING-20 | Warning  | Non-clocked latch                                  | 2          |
 | TIMING-27 | Warning  | Invalid primary clock on hierarchical pin          | 1          |
@@ -110,67 +110,137 @@ Related violations: <none>
 
 TIMING-17#12 Warning
 Non-clocked sequential cell  
-The clock pin rr/Y_paddle_reg[0]/C is not reached by a timing clock
+The clock pin rr/Y_ball_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#13 Warning
 Non-clocked sequential cell  
-The clock pin rr/Y_paddle_reg[1]/C is not reached by a timing clock
+The clock pin rr/Y_ball_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#14 Warning
 Non-clocked sequential cell  
-The clock pin rr/Y_paddle_reg[2]/C is not reached by a timing clock
+The clock pin rr/Y_ball_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#15 Warning
 Non-clocked sequential cell  
-The clock pin rr/Y_paddle_reg[3]/C is not reached by a timing clock
+The clock pin rr/Y_ball_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#16 Warning
 Non-clocked sequential cell  
-The clock pin rr/Y_paddle_reg[4]/C is not reached by a timing clock
+The clock pin rr/Y_ball_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#17 Warning
 Non-clocked sequential cell  
-The clock pin rr/Y_paddle_reg[5]/C is not reached by a timing clock
+The clock pin rr/Y_ball_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#18 Warning
 Non-clocked sequential cell  
-The clock pin rr/Y_paddle_reg[6]/C is not reached by a timing clock
+The clock pin rr/Y_ball_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#19 Warning
 Non-clocked sequential cell  
-The clock pin rr/Y_paddle_reg[7]/C is not reached by a timing clock
+The clock pin rr/Y_ball_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#20 Warning
 Non-clocked sequential cell  
-The clock pin rr/Y_paddle_reg[8]/C is not reached by a timing clock
+The clock pin rr/Y_ball_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#21 Warning
 Non-clocked sequential cell  
-The clock pin rr/Y_paddle_reg[9]/C is not reached by a timing clock
+The clock pin rr/Y_ball_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#22 Warning
 Non-clocked sequential cell  
-The clock pin rr/ball_down_reg/C is not reached by a timing clock
+The clock pin rr/Y_ball_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#23 Warning
 Non-clocked sequential cell  
-The clock pin rr/ball_fall_reg/C is not reached by a timing clock
+The clock pin rr/Y_paddle_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#24 Warning
 Non-clocked sequential cell  
-The clock pin rr/ball_up_reg/C is not reached by a timing clock
+The clock pin rr/Y_paddle_reg[10]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#25 Warning
+Non-clocked sequential cell  
+The clock pin rr/Y_paddle_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#26 Warning
+Non-clocked sequential cell  
+The clock pin rr/Y_paddle_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#27 Warning
+Non-clocked sequential cell  
+The clock pin rr/Y_paddle_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#28 Warning
+Non-clocked sequential cell  
+The clock pin rr/Y_paddle_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#29 Warning
+Non-clocked sequential cell  
+The clock pin rr/Y_paddle_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#30 Warning
+Non-clocked sequential cell  
+The clock pin rr/Y_paddle_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#31 Warning
+Non-clocked sequential cell  
+The clock pin rr/Y_paddle_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#32 Warning
+Non-clocked sequential cell  
+The clock pin rr/Y_paddle_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#33 Warning
+Non-clocked sequential cell  
+The clock pin rr/Y_paddle_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#34 Warning
+Non-clocked sequential cell  
+The clock pin rr/ball_fall_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#35 Warning
+Non-clocked sequential cell  
+The clock pin rr/q1_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#36 Warning
+Non-clocked sequential cell  
+The clock pin rr/q2_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#37 Warning
+Non-clocked sequential cell  
+The clock pin rr/qml_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#38 Warning
+Non-clocked sequential cell  
+The clock pin rr/qmr_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-18#1 Warning

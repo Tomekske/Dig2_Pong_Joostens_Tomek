@@ -152,6 +152,8 @@ signal reset_ball: std_logic := '1';
 signal reset: std_logic := '1';
 signal collision: std_logic := '1';
 
+signal q1,q2,q3,q4,qml,qmr: std_logic := '1';
+signal direction: std_logic_vector (3 downto 0);
 -- variables
 begin
 
@@ -226,52 +228,151 @@ begin
                 reset <= '0';
         end if;
     end process;
-    
     --ball logic
-    process(vidon,clk60,btn_start) begin     
-    if rising_edge(clk60) then
-        -- press btn to start game 
-        if btn_start = '1' then
-            ball_fall <= '0';
-            ball_down <= '0';
-        end if;
-        -- press reset btn to reset game
-        if btn_reset = '1' then                          
-            ball_down <= '1';
-            ball_up <= '1';  
-            ball_fall <= '1';  
-            Y_ball <=  conv_std_logic_vector(conv_integer(Y_ball_start),11);
-            X_ball <= conv_std_logic_vector(conv_integer(X_ball_start),11);             
-        end if;
+    process(vidon,clk60,btn_start,direction) begin     
+        if rising_edge(clk60) then
+            -- press btn to start game 
+            if btn_start = '1' then
+                ball_fall <= '0';
+                ball_down <= '0';
+                direction <= "0101";
+                qml <= '0';             
+
+            end if;
+            -- press reset btn to reset game
+            if btn_reset = '1' then                          
+                ball_fall <= '1';  
+                Y_ball <=  conv_std_logic_vector(conv_integer(Y_ball_start),11);
+                X_ball <= conv_std_logic_vector(conv_integer(X_ball_start),11);
+                q1 <= '1';             
+                q2 <= '1';                  
+                q3 <= '1';             
+                q1 <= '1';                  
+                qml <= '1';             
+                qmr <= '1';             
+            end if;
         -- logic       
-        if  vidon = '1' and ball_fall = '0' then
-            if ball_fall = '0' and ball_down = '0' then
-                -- make sure ball hits the peddle within a certain range            
-                if   X_ball <= X_paddle and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle)+ paddle_offset,11) then
-                    ball_down <= '1';  
-                    ball_up <= '0';
-                -- if peddle misses ball reset the game
-                elsif X_ball <= (conv_std_logic_vector(conv_integer(X_paddle_start),11))and (ball_down = '0') then
-                    ball_up <= '1';
-                    ball_down <= '1';     
-                    ball_fall <= '1'; 
-                    Y_ball <=  conv_std_logic_vector(conv_integer(Y_ball_start),11);
-                    X_ball <= conv_std_logic_vector(conv_integer(X_ball_start),11);
-                -- else move ball to the left side of the field                     
-                else
-                    X_ball <= conv_std_logic_vector(conv_integer(X_ball)-1,11);                         
-                end if;
-            -- if ball has bounced of the paddle then reverse ball direction
-            elsif X_ball < (conv_std_logic_vector(conv_integer(ball_max_right),11)) and (ball_up = '0') then
-                 X_ball <= conv_std_logic_vector(conv_integer(X_ball)+1,11);
-            -- if ball bouces on the right wall reverse ball direction
-            elsif X_ball <= (conv_std_logic_vector(conv_integer(ball_max_right),11)) and (ball_up = '0') then
-                 ball_up <= '1';
-                 ball_down <= '0'; 
-            end if;   
-        end if;                                          
-    end if;    
-end process;
+            if  vidon = '1' and ball_fall = '0' then
+--                    case (direction) is
+--                        when "0000" => q3 <= '0';
+--                        when "0001" => q1 <= '0';
+--                        when "0010" => q2 <= '0';
+--                        when "0011" => q4 <= '0';
+--                        when "0101" => qm <= '0';
+--                        when others => q4 <= '0';
+--                    end case;
+                    if qml = '0' then
+                        X_ball <= conv_std_logic_vector(conv_integer(X_ball) - 1,11);
+                    elsif qmr = '0' then
+                            X_ball <= conv_std_logic_vector(conv_integer(X_ball) + 1,11);
+                    elsif q1 = '0' then
+                                if Y_ball >= conv_std_logic_vector(conv_integer(ball_max_top),11) and X_ball <= conv_std_logic_vector(conv_integer(ball_max_right),11)then
+                                    X_ball <= conv_std_logic_vector(conv_integer(X_ball) + 1,11);
+                                    Y_ball <= conv_std_logic_vector(conv_integer(Y_ball) - 1,11);
+                                else
+                                    q1 <= '1';
+                                    q2 <= '0';
+                                end if;
+                    elsif q2 = '0' then
+                                if Y_ball <= conv_std_logic_vector(conv_integer(ball_max_bottom),11) and X_ball <= conv_std_logic_vector(conv_integer(ball_max_right),11) then
+                                    X_ball <= conv_std_logic_vector(conv_integer(X_ball) + 1,11);
+                                    Y_ball <= conv_std_logic_vector(conv_integer(Y_ball) + 1,11);
+                                else
+                                    q1 <= '0';
+                                    q2 <= '1';
+                                    
+                                end if;
+
+                   end if;              
+                    if qml ='0' and X_ball <= X_paddle and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle)+ paddle_offset,11) then
+                            if  X_ball <= X_paddle and Y_ball = Y_paddle then
+                                qml <= '1';
+                                qmr <= '0';
+                                q1 <= '1';
+
+                            elsif X_ball <= X_paddle and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle),11) then
+                                qml <= '1';
+                                qmr <= '1';
+                                q1 <= '0';
+                            elsif X_ball <= X_paddle and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle)+paddle_offset,11) and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle),11) then
+                                    qml <= '1';
+                                    qmr <= '1';
+                                    q1 <= '1';
+                                    q2 <= '0';
+                            end if;
+                    end if;
+            end if; 
+        end if;
+    end process;   
+--    --ball logic
+--    process(vidon,clk60,btn_start) begin     
+--    if rising_edge(clk60) then
+--        -- press btn to start game 
+--        if btn_start = '1' then
+--            ball_fall <= '0';
+--            ball_down <= '0';
+--        end if;
+--        -- press reset btn to reset game
+--        if btn_reset = '1' then                          
+--            ball_down <= '1';
+--            ball_up <= '1';  
+--            ball_fall <= '1';  
+--            Y_ball <=  conv_std_logic_vector(conv_integer(Y_ball_start),11);
+--            X_ball <= conv_std_logic_vector(conv_integer(X_ball_start),11);             
+--        end if;
+--        -- logic       
+--        if  vidon = '1' and ball_fall = '0' then
+--            if ball_fall = '0' and ball_down = '0' and q1 = '1'then
+--                -- make sure ball hits the peddle within a certain range            
+--                if   X_ball <= X_paddle and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle)+ paddle_offset,11) then
+----                    ball_down <= '1';  
+----                    ball_up <= '0';
+--                    if X_ball <= X_paddle and Y_ball = Y_paddle then
+--                        ball_down <= '1';  
+--                        ball_up <= '0';
+--                    elsif X_ball <= X_paddle and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle) -1, 11) then
+--                    q1 <= '0';
+ 
+--                    else
+--                        ball_up <= '1';
+--                        ball_down <= '1';     
+--                        ball_fall <= '1'; 
+--                        Y_ball <=  conv_std_logic_vector(conv_integer(Y_ball_start),11);
+--                        X_ball <= conv_std_logic_vector(conv_integer(X_ball_start),11);                                    
+--                    end if;
+--                -- if peddle misses ball reset the game
+--                elsif X_ball <= (conv_std_logic_vector(conv_integer(X_paddle_start),11))and (ball_down = '0') then
+--                    ball_up <= '1';
+--                    ball_down <= '1';     
+--                    ball_fall <= '1'; 
+--                    Y_ball <=  conv_std_logic_vector(conv_integer(Y_ball_start),11);
+--                    X_ball <= conv_std_logic_vector(conv_integer(X_ball_start),11);
+                
+----                elsif q1 = '0' and Y_ball <= conv_std_logic_vector(conv_integer(ball_max_top),11) then
+----                    Y_ball <= conv_std_logic_vector(conv_integer(Y_ball) - 1,11);
+----                    X_ball <= conv_std_logic_vector(conv_integer(X_ball) + 1,11);   
+--                -- else move ball to the left side of the field                     
+--                else
+--                    X_ball <= conv_std_logic_vector(conv_integer(X_ball)-1,11);                         
+--                end if;
+--            -- if ball has bounced of the paddle then reverse ball direction
+--            elsif X_ball < (conv_std_logic_vector(conv_integer(ball_max_right),11)) and (ball_up = '0') then
+--                 X_ball <= conv_std_logic_vector(conv_integer(X_ball)+1,11);
+--            -- if ball bouces on the right wall reverse ball direction
+--            elsif X_ball <= (conv_std_logic_vector(conv_integer(ball_max_right),11)) and (ball_up = '0') then
+--                 ball_up <= '1';
+--                 ball_down <= '0'; 
+--            elsif q1 = '0' and Y_ball <= conv_std_logic_vector(conv_integer(ball_max_top),11) then
+            
+--                Y_ball <= conv_std_logic_vector(conv_integer(Y_ball) - 1,11);
+--                X_ball <= conv_std_logic_vector(conv_integer(X_ball) + 1,11);   
+--            elsif q1 = '0' then -- and Y_ball >= conv_std_logic_vector(conv_integer(ball_max_top),11) then
+                
+--                    q1 <='1';
+--            end if;   
+--        end if;                                          
+--    end if;    
+--end process;
 
     rom_addr <= vc - vbp - Y_paddle;
     rom_pix <= hc - hbp - X_paddle;  
