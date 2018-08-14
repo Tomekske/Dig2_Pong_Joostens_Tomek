@@ -302,7 +302,7 @@ begin
                     elsif qmr = '0' then
                         X_ball <= conv_std_logic_vector(conv_integer(X_ball) + 1,11);
                     elsif q1 = '0' then
-                                if Y_ball >= conv_std_logic_vector(conv_integer(ball_max_top),11) and X_ball <= conv_std_logic_vector(conv_integer(ball_max_right),11)then
+                                if Y_ball >= conv_std_logic_vector(conv_integer(ball_max_top),11) and X_ball <= conv_std_logic_vector(conv_integer(X_paddle2),11)then
                                     
                                     X_ball <= conv_std_logic_vector(conv_integer(X_ball) + 1,11);
                                     Y_ball <= conv_std_logic_vector(conv_integer(Y_ball) - 1,11);
@@ -317,10 +317,10 @@ begin
                                     q2 <= '0';
                                 end if;
                     elsif q2 = '0' then
-                                if Y_ball <= conv_std_logic_vector(conv_integer(ball_max_bottom),11) and X_ball <= conv_std_logic_vector(conv_integer(ball_max_right),11) then
+                                if Y_ball <= conv_std_logic_vector(conv_integer(ball_max_bottom),11) and X_ball <= conv_std_logic_vector(conv_integer(X_paddle2),11) then
                                     X_ball <= conv_std_logic_vector(conv_integer(X_ball) + 1,11);
                                     Y_ball <= conv_std_logic_vector(conv_integer(Y_ball) + 1,11);
-                                elsif X_ball >= X_paddle2 and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle2)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle2)+ paddle_offset,11) then
+                                elsif X_ball = X_paddle2 and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle2)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle2)+ paddle_offset,11) then
                                     q1 <= '1';
                                     q2 <= '1';
                                     qmr <= '1';
@@ -338,18 +338,18 @@ begin
                                 qmr <= '0';
                                 q1 <= '1';
 
-                            elsif X_ball <= X_paddle and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle),11) then
+                            elsif X_ball = X_paddle and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle),11) then
                                 qml <= '1';
                                 qmr <= '1';
                                 q1 <= '0';
-                            elsif X_ball <= X_paddle and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle)+paddle_offset,11) and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle),11) then
+                            elsif X_ball = X_paddle and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle)+paddle_offset,11) and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle),11) then
                                 qml <= '1';
                                 qmr <= '1';
                                 q1 <= '1';
                                 q2 <= '0';                      
                             end if;
                     elsif qmr ='0' and X_ball >= X_paddle2 and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle2)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle2)+ paddle_offset,11) then
-                             if  X_ball <= X_paddle2 and Y_ball = Y_paddle2 then
+                             if  X_ball = X_paddle2 and Y_ball = Y_paddle2 then
                                 qml <= '0';
                                 qmr <= '1';
                                 q1 <= '1';
