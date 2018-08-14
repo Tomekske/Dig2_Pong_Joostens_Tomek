@@ -63,9 +63,11 @@ Port (
   hc : in std_logic_vector(9 downto 0);
   vc : in std_logic_vector(9 downto 0);
   M: in std_logic_vector(0 to 15);
+  M2: in std_logic_vector(0 to 15);
   M_ball: in std_logic_vector(0 to 15);
   sw: in std_logic_vector(7 downto 0);
   rom_sprite_paddle: out std_logic_vector(3 downto 0);
+  rom_sprite_paddle2: out std_logic_vector(3 downto 0);
   rom_sprite_ball: out std_logic_vector(3 downto 0);
   red : out std_logic_vector(3 downto 0);
   green : out std_logic_vector(3 downto 0);
@@ -85,15 +87,20 @@ constant vbp: std_logic_vector(9 downto 0) := "0000011111"; --31
 constant w: integer := 16;
 constant h: integer := 16;
 
+constant ball_max_left: integer := 2;
+constant ball_max_right: integer := 620;
+constant paddle_offset_start: integer := 6;
+
 constant Y_ball_start: integer := 236;
 constant X_ball_start: integer := 310;
 
 constant Y_paddle_start: integer := 236;
-constant X_paddle_start: integer := 8;
+constant X_paddle_start: integer := ball_max_left + paddle_offset_start;
+
+constant Y_paddle_start2: integer := 236;
+constant X_paddle_start2: integer := ball_max_right - paddle_offset_start;
 
 
-constant ball_max_left: integer := 2;
-constant ball_max_right: integer := 620;
 
 constant ball_max_top: integer := 66;
 constant ball_max_bottom: integer := 408;
@@ -102,6 +109,9 @@ constant paddle_max_top: integer := 70;
 constant paddle_max_bottom: integer := 403;
 signal X_paddle: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(X_paddle_start),11);
 signal Y_paddle: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(Y_paddle_start),11);
+
+signal X_paddle2: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(X_paddle_start2),11);
+signal Y_paddle2: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(Y_paddle_start2),11);
 
 --signal X_ball: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(310),11);
 signal X_ball: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(X_ball_start),11);
@@ -114,7 +124,15 @@ signal spriteon, R, G, B: std_logic;
 signal red_paddle: STD_LOGIC_VECTOR (3 downto 0);                     -- rood
 signal green_paddle : STD_LOGIC_VECTOR (3 downto 0);                   -- groen
 signal blue_paddle : STD_LOGIC_VECTOR (3 downto 0);                   -- blauw
+--
+signal rom_addr2, rom_pix2: std_logic_vector(10 downto 0);
+signal spriteon2, R2, G2, B2: std_logic;
 
+signal red_paddle2: STD_LOGIC_VECTOR (3 downto 0);                     -- rood
+signal green_paddle2 : STD_LOGIC_VECTOR (3 downto 0);                   -- groen
+signal blue_paddle2 : STD_LOGIC_VECTOR (3 downto 0);                   -- blauw
+
+--
 signal red_ball: STD_LOGIC_VECTOR (3 downto 0);                     -- rood
 signal green_ball : STD_LOGIC_VECTOR (3 downto 0);                   -- groen
 signal blue_ball : STD_LOGIC_VECTOR (3 downto 0);                   -- blauw
@@ -128,6 +146,9 @@ signal blue_bg : STD_LOGIC_VECTOR (3 downto 0);                   -- blauw
 
 constant wb: integer := 16;
 constant hb: integer := 16;
+
+constant w2: integer := 16;
+constant h2: integer := 16;
 
 -- constants
 constant vc_left_centerline: integer := 150;
@@ -152,8 +173,9 @@ signal reset_ball: std_logic := '1';
 signal reset: std_logic := '1';
 signal collision: std_logic := '1';
 
-signal q1,q2,q3,q4,qml,qmr: std_logic := '1';
+signal q1,q2,q3,q4,qml,qmr,dir_right,dir_left,start,ball: std_logic := '1';
 signal direction: std_logic_vector (3 downto 0);
+
 -- variables
 begin
 
@@ -222,6 +244,28 @@ begin
         end if;
     end process;   
 
+
+    -- paddle2 logic
+    process(vidon,clk60,btn_reset) begin
+        if btn_reset = '1' then                          --paddle reset
+            Y_paddle2 <=  conv_std_logic_vector(conv_integer(Y_paddle_start2),11);
+            X_paddle2 <= conv_std_logic_vector(conv_integer(X_paddle_start2),11);   
+        end if;
+        
+        if rising_edge(clk60) then
+            if vidon = '1' then
+                --paddle boven
+                if y_ball >= conv_std_logic_vector(conv_integer(paddle_max_top),11) then
+                    Y_paddle2 <= conv_std_logic_vector(conv_integer(y_ball),11);
+                --paddle beneden
+                elsif y_ball <= conv_std_logic_vector(conv_integer(paddle_max_bottom),11) then
+                    Y_paddle2 <= conv_std_logic_vector(conv_integer(y_ball),11);
+
+                end if;
+            end if;
+        end if;
+    end process;  
+
     -- reset logic
     process(btn_reset) begin
         if btn_reset = '1' and reset_paddle ='1' and reset_ball = '1' then                          --paddle reset
@@ -259,9 +303,16 @@ begin
                         X_ball <= conv_std_logic_vector(conv_integer(X_ball) + 1,11);
                     elsif q1 = '0' then
                                 if Y_ball >= conv_std_logic_vector(conv_integer(ball_max_top),11) and X_ball <= conv_std_logic_vector(conv_integer(ball_max_right),11)then
+                                    
                                     X_ball <= conv_std_logic_vector(conv_integer(X_ball) + 1,11);
                                     Y_ball <= conv_std_logic_vector(conv_integer(Y_ball) - 1,11);
+                                elsif X_ball >= X_paddle2 and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle2)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle2)+ paddle_offset,11) then
+                                        q1 <= '1';
+                                        q2 <= '1';
+                                        qmr <= '1';
+                                        qml <= '0';
                                 else
+                                    
                                     q1 <= '1';
                                     q2 <= '0';
                                 end if;
@@ -269,10 +320,16 @@ begin
                                 if Y_ball <= conv_std_logic_vector(conv_integer(ball_max_bottom),11) and X_ball <= conv_std_logic_vector(conv_integer(ball_max_right),11) then
                                     X_ball <= conv_std_logic_vector(conv_integer(X_ball) + 1,11);
                                     Y_ball <= conv_std_logic_vector(conv_integer(Y_ball) + 1,11);
+                                elsif X_ball >= X_paddle2 and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle2)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle2)+ paddle_offset,11) then
+                                    q1 <= '1';
+                                    q2 <= '1';
+                                    qmr <= '1';
+                                         qml <= '0';
+                               
                                 else
                                     q1 <= '0';
                                     q2 <= '1';
-                                    
+                                   
                                 end if;
                    end if;              
                     if qml ='0' and X_ball <= X_paddle and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle)+ paddle_offset,11) then
@@ -286,13 +343,17 @@ begin
                                 qmr <= '1';
                                 q1 <= '0';
                             elsif X_ball <= X_paddle and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle)+paddle_offset,11) and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle),11) then
-                                    qml <= '1';
-                                    qmr <= '1';
-                                    q1 <= '1';
-                                    q2 <= '0';                      
-
+                                qml <= '1';
+                                qmr <= '1';
+                                q1 <= '1';
+                                q2 <= '0';                      
                             end if;
-
+                    elsif qmr ='0' and X_ball >= X_paddle2 and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle2)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle2)+ paddle_offset,11) then
+                             if  X_ball <= X_paddle2 and Y_ball = Y_paddle2 then
+                                qml <= '0';
+                                qmr <= '1';
+                                q1 <= '1';
+                            end if;
                     elsif (qml ='0') and (X_ball < (conv_std_logic_vector(conv_integer(X_paddle_start),11))) then
                         ball_fall <= '1';  
                         Y_ball <=  conv_std_logic_vector(conv_integer(Y_ball_start),11);
@@ -306,76 +367,7 @@ begin
                     end if;
             end if; 
         end if;
-    end process;   
---    --ball logic
---    process(vidon,clk60,btn_start) begin     
---    if rising_edge(clk60) then
---        -- press btn to start game 
---        if btn_start = '1' then
---            ball_fall <= '0';
---            ball_down <= '0';
---        end if;
---        -- press reset btn to reset game
---        if btn_reset = '1' then                          
---            ball_down <= '1';
---            ball_up <= '1';  
---            ball_fall <= '1';  
---            Y_ball <=  conv_std_logic_vector(conv_integer(Y_ball_start),11);
---            X_ball <= conv_std_logic_vector(conv_integer(X_ball_start),11);             
---        end if;
---        -- logic       
---        if  vidon = '1' and ball_fall = '0' then
---            if ball_fall = '0' and ball_down = '0' and q1 = '1'then
---                -- make sure ball hits the peddle within a certain range            
---                if   X_ball <= X_paddle and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle)+ paddle_offset,11) then
-----                    ball_down <= '1';  
-----                    ball_up <= '0';
---                    if X_ball <= X_paddle and Y_ball = Y_paddle then
---                        ball_down <= '1';  
---                        ball_up <= '0';
---                    elsif X_ball <= X_paddle and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle) -1, 11) then
---                    q1 <= '0';
- 
---                    else
---                        ball_up <= '1';
---                        ball_down <= '1';     
---                        ball_fall <= '1'; 
---                        Y_ball <=  conv_std_logic_vector(conv_integer(Y_ball_start),11);
---                        X_ball <= conv_std_logic_vector(conv_integer(X_ball_start),11);                                    
---                    end if;
---                -- if peddle misses ball reset the game
---                elsif X_ball <= (conv_std_logic_vector(conv_integer(X_paddle_start),11))and (ball_down = '0') then
---                    ball_up <= '1';
---                    ball_down <= '1';     
---                    ball_fall <= '1'; 
---                    Y_ball <=  conv_std_logic_vector(conv_integer(Y_ball_start),11);
---                    X_ball <= conv_std_logic_vector(conv_integer(X_ball_start),11);
-                
-----                elsif q1 = '0' and Y_ball <= conv_std_logic_vector(conv_integer(ball_max_top),11) then
-----                    Y_ball <= conv_std_logic_vector(conv_integer(Y_ball) - 1,11);
-----                    X_ball <= conv_std_logic_vector(conv_integer(X_ball) + 1,11);   
---                -- else move ball to the left side of the field                     
---                else
---                    X_ball <= conv_std_logic_vector(conv_integer(X_ball)-1,11);                         
---                end if;
---            -- if ball has bounced of the paddle then reverse ball direction
---            elsif X_ball < (conv_std_logic_vector(conv_integer(ball_max_right),11)) and (ball_up = '0') then
---                 X_ball <= conv_std_logic_vector(conv_integer(X_ball)+1,11);
---            -- if ball bouces on the right wall reverse ball direction
---            elsif X_ball <= (conv_std_logic_vector(conv_integer(ball_max_right),11)) and (ball_up = '0') then
---                 ball_up <= '1';
---                 ball_down <= '0'; 
---            elsif q1 = '0' and Y_ball <= conv_std_logic_vector(conv_integer(ball_max_top),11) then
-            
---                Y_ball <= conv_std_logic_vector(conv_integer(Y_ball) - 1,11);
---                X_ball <= conv_std_logic_vector(conv_integer(X_ball) + 1,11);   
---            elsif q1 = '0' then -- and Y_ball >= conv_std_logic_vector(conv_integer(ball_max_top),11) then
-                
---                    q1 <='1';
---            end if;   
---        end if;                                          
---    end if;    
---end process;
+    end process; 
 
     rom_addr <= vc - vbp - Y_paddle;
     rom_pix <= hc - hbp - X_paddle;  
@@ -389,7 +381,13 @@ begin
     --Enable sprite video out when within the sprite region
     spriteon_ball <= '1' when (((hc >= X_ball + hbp) and (hc < X_ball + hbp + wb)) and ((vc >= Y_ball + vbp) and (vc < Y_ball + vbp + hb))) else '0';
 
-   
+    rom_addr2 <= vc - vbp - Y_paddle2;
+    rom_pix2 <= hc - hbp - X_paddle2;  
+    rom_sprite_paddle2 <= rom_addr2(3 downto 0);   
+    --Enable sprite video out when within the sprite region
+    spriteon2 <= '1' when (((hc >= X_paddle2 + hbp) and (hc < X_paddle2 + hbp + w2)) and ((vc >= Y_paddle2 + vbp) and (vc < Y_paddle2 + vbp + h2))) else '0';
+
+  
     process(spriteon, vidon, rom_pix, M)
         variable j: integer;
         
@@ -426,14 +424,32 @@ begin
             green_ball <= GB & GB & GB & GB;
             blue_ball <= BB & BB & BB & BB;
         end if;
+    end process;
+        
+    process(spriteon2, vidon, rom_pix2, M2)
+        variable j: integer;
+        
+        begin
+        red_paddle2 <= "0000";
+        green_paddle2 <= "0000";
+        blue_paddle2 <= "0000";
+        
+        if spriteon2 = '1' and vidon = '1' then
+            j := conv_integer(rom_pix2);
+            R2 <= M2(j);
+            G2 <= M2(j);
+            B2 <= M2(j);
+            red_paddle2 <= R2 & R2 & R2 & R2;
+            green_paddle2 <= G2 & G2 & G2 & G2;
+            blue_paddle2 <= B2 & B2 & B2 & B2;
+        end if;
     end process;    
-    
     --show colors on VGA
     process(clk) begin
         if rising_edge(clk) then
-            red <= red_paddle or red_bg or red_ball;
-            green <= green_paddle or green_bg or green_ball;
-            blue <= blue_paddle or blue_bg or blue_ball;
+            red <= red_paddle or red_bg or red_ball or red_paddle2;
+            green <= green_paddle or green_bg or green_ball or green_paddle2;
+            blue <= blue_paddle or blue_bg or blue_ball or blue_paddle2;
         end if;
    end process;
 end Behavioral;

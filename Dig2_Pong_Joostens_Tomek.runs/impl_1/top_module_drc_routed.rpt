@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date         : Mon Aug 13 17:17:35 2018
+| Date         : Tue Aug 14 13:27:53 2018
 | Host         : DESKTOP-JKG1DO6 running 64-bit major release  (build 9200)
 | Command      : report_drc -file top_module_drc_routed.rpt -pb top_module_drc_routed.pb -rpx top_module_drc_routed.rpx
 | Design       : top_module
@@ -24,14 +24,14 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 6
+             Violations found: 7
 +----------+------------------+-----------------------------------------------------+------------+
 | Rule     | Severity         | Description                                         | Violations |
 +----------+------------------+-----------------------------------------------------+------------+
 | NSTD-1   | Critical Warning | Unspecified I/O Standard                            | 1          |
 | UCIO-1   | Critical Warning | Unconstrained Logical Port                          | 1          |
 | CFGBVS-1 | Warning          | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
-| PDRC-153 | Warning          | Gated clock check                                   | 2          |
+| PDRC-153 | Warning          | Gated clock check                                   | 3          |
 | PLIO-3   | Warning          | Placement Constraints Check for IO constraints      | 1          |
 +----------+------------------+-----------------------------------------------------+------------+
 
@@ -67,7 +67,12 @@ Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net vga/R0 is a gated clock net sourced by a combinational pin vga/R_reg_i_2/O, cell vga/R_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net vga/R_reg_i_5_n_0 is a gated clock net sourced by a combinational pin vga/R_reg_i_5/O, cell vga/R_reg_i_5. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#3 Warning
+Gated clock check  
+Net vga/red_reg[3]_0 is a gated clock net sourced by a combinational pin vga/R2_reg_i_6/O, cell vga/R2_reg_i_6. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PLIO-3#1 Warning

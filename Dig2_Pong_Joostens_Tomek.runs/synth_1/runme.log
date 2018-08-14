@@ -14,52 +14,57 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 13908 
+INFO: Helper process launched with PID 18976 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 284.207 ; gain = 73.781
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 295.613 ; gain = 85.457
 ---------------------------------------------------------------------------------
 CRITICAL WARNING: [Synth 8-2488] overwriting existing primary unit clk_wiz_0 [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/clk_wiz_0.vhd:34]
 INFO: [Synth 8-638] synthesizing module 'top_module' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:62]
-INFO: [Synth 8-3491] module 'clock' declared at 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/clock.vhd:36' bound to instance 'c33' of component 'clock' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:258]
+INFO: [Synth 8-3491] module 'clock' declared at 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/clock.vhd:36' bound to instance 'c33' of component 'clock' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:268]
 INFO: [Synth 8-638] synthesizing module 'clock' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/clock.vhd:42]
 INFO: [Synth 8-226] default block is never used [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/clock.vhd:57]
 INFO: [Synth 8-256] done synthesizing module 'clock' (1#1) [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/clock.vhd:42]
-INFO: [Synth 8-3491] module 'debounce' declared at 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/debounce.vhd:34' bound to instance 'db' of component 'debounce' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:259]
+INFO: [Synth 8-3491] module 'debounce' declared at 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/debounce.vhd:34' bound to instance 'db' of component 'debounce' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:269]
 INFO: [Synth 8-638] synthesizing module 'debounce' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/debounce.vhd:40]
 INFO: [Synth 8-256] done synthesizing module 'debounce' (2#1) [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/debounce.vhd:40]
-INFO: [Synth 8-3491] module 'seg7' declared at 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/seg7.vhd:35' bound to instance 'seg' of component 'seg7' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:261]
+INFO: [Synth 8-3491] module 'seg7' declared at 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/seg7.vhd:35' bound to instance 'seg' of component 'seg7' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:271]
 INFO: [Synth 8-638] synthesizing module 'seg7' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/seg7.vhd:45]
 WARNING: [Synth 8-3848] Net dp in module/entity seg7 does not have driver. [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/seg7.vhd:41]
 INFO: [Synth 8-256] done synthesizing module 'seg7' (3#1) [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/seg7.vhd:45]
-INFO: [Synth 8-3491] module 'mux21' declared at 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/mux21.vhd:34' bound to instance 'mux' of component 'mux21' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:262]
+INFO: [Synth 8-3491] module 'mux21' declared at 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/mux21.vhd:34' bound to instance 'mux' of component 'mux21' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:272]
 INFO: [Synth 8-638] synthesizing module 'mux21' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/mux21.vhd:41]
 INFO: [Synth 8-226] default block is never used [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/mux21.vhd:46]
 INFO: [Synth 8-256] done synthesizing module 'mux21' (4#1) [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/mux21.vhd:41]
-INFO: [Synth 8-637] synthesizing blackbox instance 'xxx' of component 'clk_wiz_0' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:266]
-INFO: [Synth 8-3491] module 'vga_640x480' declared at 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_640x480.vhd:35' bound to instance 'vga' of component 'vga_640x480' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:268]
+INFO: [Synth 8-637] synthesizing blackbox instance 'xxx' of component 'clk_wiz_0' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:276]
+INFO: [Synth 8-3491] module 'vga_640x480' declared at 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_640x480.vhd:35' bound to instance 'vga' of component 'vga_640x480' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:278]
 INFO: [Synth 8-638] synthesizing module 'vga_640x480' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_640x480.vhd:45]
 INFO: [Synth 8-256] done synthesizing module 'vga_640x480' (5#1) [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_640x480.vhd:45]
-INFO: [Synth 8-3491] module 'blk_mem_gen_0' declared at 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-7776-DESKTOP-JKG1DO6/realtime/blk_mem_gen_0_stub.vhdl:5' bound to instance 'tt' of component 'blk_mem_gen_0' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:269]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-7776-DESKTOP-JKG1DO6/realtime/blk_mem_gen_0_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'blk_mem_gen_ball' declared at 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-7776-DESKTOP-JKG1DO6/realtime/blk_mem_gen_ball_stub.vhdl:5' bound to instance 'mem_ball' of component 'blk_mem_gen_ball' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:270]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_ball' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-7776-DESKTOP-JKG1DO6/realtime/blk_mem_gen_ball_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'vga_sprite' declared at 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:35' bound to instance 'rr' of component 'vga_sprite' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:277]
-INFO: [Synth 8-638] synthesizing module 'vga_sprite' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:81]
-WARNING: [Synth 8-614] signal 'hc' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:161]
-WARNING: [Synth 8-614] signal 'vc' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:161]
-WARNING: [Synth 8-614] signal 'reset_paddle' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:226]
-WARNING: [Synth 8-614] signal 'reset_ball' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:226]
-WARNING: [Synth 8-614] signal 'R' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:393]
-WARNING: [Synth 8-614] signal 'G' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:393]
-WARNING: [Synth 8-614] signal 'B' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:393]
-WARNING: [Synth 8-614] signal 'RB' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:412]
-WARNING: [Synth 8-614] signal 'GB' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:412]
-WARNING: [Synth 8-614] signal 'BB' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:412]
-INFO: [Synth 8-256] done synthesizing module 'vga_sprite' (6#1) [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:81]
+INFO: [Synth 8-3491] module 'blk_mem_gen_0' declared at 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-23628-DESKTOP-JKG1DO6/realtime/blk_mem_gen_0_stub.vhdl:5' bound to instance 'sp1' of component 'blk_mem_gen_0' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:279]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-23628-DESKTOP-JKG1DO6/realtime/blk_mem_gen_0_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'blk_mem_gen_paddle2' declared at 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-23628-DESKTOP-JKG1DO6/realtime/blk_mem_gen_paddle2_stub.vhdl:5' bound to instance 'sp2' of component 'blk_mem_gen_paddle2' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:280]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_paddle2' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-23628-DESKTOP-JKG1DO6/realtime/blk_mem_gen_paddle2_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'blk_mem_gen_ball' declared at 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-23628-DESKTOP-JKG1DO6/realtime/blk_mem_gen_ball_stub.vhdl:5' bound to instance 'mem_ball' of component 'blk_mem_gen_ball' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:281]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_ball' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-23628-DESKTOP-JKG1DO6/realtime/blk_mem_gen_ball_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'vga_sprite' declared at 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:35' bound to instance 'rr' of component 'vga_sprite' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:288]
+INFO: [Synth 8-638] synthesizing module 'vga_sprite' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:83]
+WARNING: [Synth 8-614] signal 'hc' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:183]
+WARNING: [Synth 8-614] signal 'vc' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:183]
+WARNING: [Synth 8-614] signal 'reset_paddle' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:270]
+WARNING: [Synth 8-614] signal 'reset_ball' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:270]
+WARNING: [Synth 8-614] signal 'R' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:391]
+WARNING: [Synth 8-614] signal 'G' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:391]
+WARNING: [Synth 8-614] signal 'B' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:391]
+WARNING: [Synth 8-614] signal 'RB' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:410]
+WARNING: [Synth 8-614] signal 'GB' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:410]
+WARNING: [Synth 8-614] signal 'BB' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:410]
+WARNING: [Synth 8-614] signal 'R2' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:429]
+WARNING: [Synth 8-614] signal 'G2' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:429]
+WARNING: [Synth 8-614] signal 'B2' is read in the process but is not in the sensitivity list [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:429]
+INFO: [Synth 8-256] done synthesizing module 'vga_sprite' (6#1) [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:83]
 WARNING: [Synth 8-3848] Net led in module/entity top_module does not have driver. [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:39]
-WARNING: [Synth 8-3848] Net vvv in module/entity top_module does not have driver. [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:239]
-WARNING: [Synth 8-3848] Net counter in module/entity top_module does not have driver. [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:237]
-WARNING: [Synth 8-3848] Net clr in module/entity top_module does not have driver. [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:240]
+WARNING: [Synth 8-3848] Net vvv in module/entity top_module does not have driver. [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:247]
+WARNING: [Synth 8-3848] Net counter in module/entity top_module does not have driver. [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:245]
+WARNING: [Synth 8-3848] Net clr in module/entity top_module does not have driver. [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:248]
 INFO: [Synth 8-256] done synthesizing module 'top_module' (7#1) [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:62]
 WARNING: [Synth 8-3331] design vga_sprite has unconnected port sw[7]
 WARNING: [Synth 8-3331] design vga_sprite has unconnected port sw[6]
@@ -81,7 +86,7 @@ WARNING: [Synth 8-3331] design top_module has unconnected port an_in[0]
 WARNING: [Synth 8-3331] design top_module has unconnected port sel[1]
 WARNING: [Synth 8-3331] design top_module has unconnected port sel[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 321.590 ; gain = 111.164
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 331.887 ; gain = 121.730
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -90,30 +95,33 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin seg:x[3] to constant 0 [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:261]
-WARNING: [Synth 8-3295] tying undriven pin seg:x[2] to constant 0 [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:261]
-WARNING: [Synth 8-3295] tying undriven pin seg:x[1] to constant 0 [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:261]
-WARNING: [Synth 8-3295] tying undriven pin seg:x[0] to constant 0 [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:261]
-WARNING: [Synth 8-3295] tying undriven pin mux:sel[1] to constant 0 [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:262]
-WARNING: [Synth 8-3295] tying undriven pin mux:sel[0] to constant 0 [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:262]
-WARNING: [Synth 8-3295] tying undriven pin vga:clr to constant 0 [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:268]
+WARNING: [Synth 8-3295] tying undriven pin seg:x[3] to constant 0 [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:271]
+WARNING: [Synth 8-3295] tying undriven pin seg:x[2] to constant 0 [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:271]
+WARNING: [Synth 8-3295] tying undriven pin seg:x[1] to constant 0 [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:271]
+WARNING: [Synth 8-3295] tying undriven pin seg:x[0] to constant 0 [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:271]
+WARNING: [Synth 8-3295] tying undriven pin mux:sel[1] to constant 0 [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:272]
+WARNING: [Synth 8-3295] tying undriven pin mux:sel[0] to constant 0 [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:272]
+WARNING: [Synth 8-3295] tying undriven pin vga:clr to constant 0 [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:278]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 321.590 ; gain = 111.164
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 331.887 ; gain = 121.730
 ---------------------------------------------------------------------------------
-WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'blk_mem_gen_0' instantiated as 'tt' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:269]
-WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'blk_mem_gen_ball' instantiated as 'mem_ball' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:270]
-WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'clk_wiz_0' instantiated as 'xxx' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:266]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'blk_mem_gen_0' instantiated as 'sp1' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:279]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'blk_mem_gen_ball' instantiated as 'mem_ball' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:281]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'blk_mem_gen_paddle2' instantiated as 'sp2' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:280]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'clk_wiz_0' instantiated as 'xxx' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/top_module.vhd:276]
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-7776-DESKTOP-JKG1DO6/dcp/clk_wiz_0_in_context.xdc] for cell 'xxx'
-Finished Parsing XDC File [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-7776-DESKTOP-JKG1DO6/dcp/clk_wiz_0_in_context.xdc] for cell 'xxx'
-Parsing XDC File [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-7776-DESKTOP-JKG1DO6/dcp_2/blk_mem_gen_0_in_context.xdc] for cell 'tt'
-Finished Parsing XDC File [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-7776-DESKTOP-JKG1DO6/dcp_2/blk_mem_gen_0_in_context.xdc] for cell 'tt'
-Parsing XDC File [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-7776-DESKTOP-JKG1DO6/dcp_3/blk_mem_gen_ball_in_context.xdc] for cell 'mem_ball'
-Finished Parsing XDC File [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-7776-DESKTOP-JKG1DO6/dcp_3/blk_mem_gen_ball_in_context.xdc] for cell 'mem_ball'
+Parsing XDC File [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-23628-DESKTOP-JKG1DO6/dcp/clk_wiz_0_in_context.xdc] for cell 'xxx'
+Finished Parsing XDC File [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-23628-DESKTOP-JKG1DO6/dcp/clk_wiz_0_in_context.xdc] for cell 'xxx'
+Parsing XDC File [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-23628-DESKTOP-JKG1DO6/dcp_2/blk_mem_gen_0_in_context.xdc] for cell 'sp1'
+Finished Parsing XDC File [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-23628-DESKTOP-JKG1DO6/dcp_2/blk_mem_gen_0_in_context.xdc] for cell 'sp1'
+Parsing XDC File [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-23628-DESKTOP-JKG1DO6/dcp_3/blk_mem_gen_ball_in_context.xdc] for cell 'mem_ball'
+Finished Parsing XDC File [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-23628-DESKTOP-JKG1DO6/dcp_3/blk_mem_gen_ball_in_context.xdc] for cell 'mem_ball'
+Parsing XDC File [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-23628-DESKTOP-JKG1DO6/dcp_4/blk_mem_gen_0_in_context.xdc] for cell 'sp2'
+Finished Parsing XDC File [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-23628-DESKTOP-JKG1DO6/dcp_4/blk_mem_gen_0_in_context.xdc] for cell 'sp2'
 Parsing XDC File [D:/Programs/Basys3_Master.xdc]
 WARNING: [Vivado 12-507] No nets matched 'btn_up_IBUF'. [D:/Programs/Basys3_Master.xdc:10]
 WARNING: [Vivado 12-507] No nets matched 'btn_start_IBUF'. [D:/Programs/Basys3_Master.xdc:11]
@@ -125,47 +133,55 @@ Finished Parsing XDC File [D:/Programs/Basys3_Master.xdc]
 WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [D:/Programs/Basys3_Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/top_module_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Programs/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_module_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_module_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 621.930 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 634.148 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'mem_ball' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'tt' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'sp1' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'sp2' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 621.930 ; gain = 411.504
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 634.148 ; gain = 423.992
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 621.930 ; gain = 411.504
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 634.148 ; gain = 423.992
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-7776-DESKTOP-JKG1DO6/dcp/clk_wiz_0_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-7776-DESKTOP-JKG1DO6/dcp/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-23628-DESKTOP-JKG1DO6/dcp/clk_wiz_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/.Xil/Vivado-23628-DESKTOP-JKG1DO6/dcp/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property DONT_TOUCH = true for sp2. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 621.930 ; gain = 411.504
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 634.148 ; gain = 423.992
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4471] merging register 'green_reg[3:0]' into 'red_reg[3:0]' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:435]
-INFO: [Synth 8-4471] merging register 'blue_reg[3:0]' into 'red_reg[3:0]' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:436]
-INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:390]
-INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:390]
-INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:384]
-INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:390]
-INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:390]
-INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:384]
-INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:390]
-INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:390]
-INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:384]
-WARNING: [Synth 8-327] inferring latch for variable 'RB_reg' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:422]
-WARNING: [Synth 8-327] inferring latch for variable 'R_reg' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:403]
+INFO: [Synth 8-4471] merging register 'green_reg[3:0]' into 'red_reg[3:0]' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:451]
+INFO: [Synth 8-4471] merging register 'blue_reg[3:0]' into 'red_reg[3:0]' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:452]
+INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:382]
+INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:382]
+INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:388]
+INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:376]
+INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:382]
+INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:382]
+INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:388]
+INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:376]
+INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:382]
+INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:382]
+INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:388]
+INFO: [Synth 8-41] '_-' operator could not be merged with '+' operator due to loss of accuracy [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:376]
+WARNING: [Synth 8-327] inferring latch for variable 'RB_reg' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:420]
+WARNING: [Synth 8-327] inferring latch for variable 'R2_reg' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:439]
+WARNING: [Synth 8-327] inferring latch for variable 'R_reg' [D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd:401]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 621.930 ; gain = 411.504
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 634.148 ; gain = 423.992
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -178,25 +194,27 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input     12 Bit       Adders := 3     
-	   2 Input     11 Bit       Adders := 14    
+	   3 Input     12 Bit       Adders := 4     
+	   2 Input     11 Bit       Adders := 18    
 	   2 Input     10 Bit       Adders := 2     
-	   3 Input      4 Bit       Adders := 3     
-	   2 Input      4 Bit       Adders := 1     
+	   3 Input      4 Bit       Adders := 4     
+	   2 Input      4 Bit       Adders := 2     
 +---Registers : 
 	               25 Bit    Registers := 1     
-	               11 Bit    Registers := 3     
+	               11 Bit    Registers := 4     
 	               10 Bit    Registers := 2     
 	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 10    
 +---Muxes : 
 	   4 Input     18 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 22    
+	   2 Input     11 Bit        Muxes := 21    
+	   4 Input     11 Bit        Muxes := 2     
 	   2 Input     10 Bit        Muxes := 2     
 	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 4     
 	   6 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 60    
+	   2 Input      1 Bit        Muxes := 90    
+	   4 Input      1 Bit        Muxes := 5     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -231,19 +249,21 @@ Detailed RTL Component Info :
 Module vga_sprite 
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input     12 Bit       Adders := 3     
-	   2 Input     11 Bit       Adders := 14    
-	   3 Input      4 Bit       Adders := 3     
-	   2 Input      4 Bit       Adders := 1     
+	   3 Input     12 Bit       Adders := 4     
+	   2 Input     11 Bit       Adders := 18    
+	   3 Input      4 Bit       Adders := 4     
+	   2 Input      4 Bit       Adders := 2     
 +---Registers : 
-	               11 Bit    Registers := 3     
+	               11 Bit    Registers := 4     
 	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 5     
 +---Muxes : 
-	   2 Input     11 Bit        Muxes := 22    
-	   2 Input      4 Bit        Muxes := 3     
+	   2 Input     11 Bit        Muxes := 21    
+	   4 Input     11 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 4     
 	   6 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 60    
+	   2 Input      1 Bit        Muxes := 90    
+	   4 Input      1 Bit        Muxes := 5     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -259,46 +279,46 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3331] design vga_sprite has unconnected port sw[7]
+WARNING: [Synth 8-3331] design vga_sprite has unconnected port sw[6]
+WARNING: [Synth 8-3331] design vga_sprite has unconnected port sw[5]
+WARNING: [Synth 8-3331] design vga_sprite has unconnected port sw[4]
+WARNING: [Synth 8-3331] design vga_sprite has unconnected port sw[3]
+WARNING: [Synth 8-3331] design vga_sprite has unconnected port sw[2]
+WARNING: [Synth 8-3331] design vga_sprite has unconnected port sw[1]
+WARNING: [Synth 8-3331] design vga_sprite has unconnected port sw[0]
 WARNING: [Synth 8-3331] design top_module has unconnected port led[3]
 WARNING: [Synth 8-3331] design top_module has unconnected port led[2]
 WARNING: [Synth 8-3331] design top_module has unconnected port led[1]
 WARNING: [Synth 8-3331] design top_module has unconnected port led[0]
 WARNING: [Synth 8-3331] design top_module has unconnected port dp
-WARNING: [Synth 8-3331] design top_module has unconnected port sw[7]
-WARNING: [Synth 8-3331] design top_module has unconnected port sw[6]
-WARNING: [Synth 8-3331] design top_module has unconnected port sw[5]
-WARNING: [Synth 8-3331] design top_module has unconnected port sw[4]
-WARNING: [Synth 8-3331] design top_module has unconnected port sw[3]
-WARNING: [Synth 8-3331] design top_module has unconnected port sw[2]
-WARNING: [Synth 8-3331] design top_module has unconnected port sw[1]
-WARNING: [Synth 8-3331] design top_module has unconnected port sw[0]
 WARNING: [Synth 8-3331] design top_module has unconnected port an_in[3]
 WARNING: [Synth 8-3331] design top_module has unconnected port an_in[2]
 WARNING: [Synth 8-3331] design top_module has unconnected port an_in[1]
 WARNING: [Synth 8-3331] design top_module has unconnected port an_in[0]
 WARNING: [Synth 8-3331] design top_module has unconnected port sel[1]
 WARNING: [Synth 8-3331] design top_module has unconnected port sel[0]
-INFO: [Synth 8-3886] merging instance 'c33/base_reg[0]' (FD) to 'c33/base_reg[1]'
-INFO: [Synth 8-3886] merging instance 'c33/base_reg[1]' (FD) to 'c33/base_reg[2]'
-INFO: [Synth 8-3886] merging instance 'c33/base_reg[2]' (FD) to 'c33/base_reg[3]'
-INFO: [Synth 8-3886] merging instance 'c33/base_reg[3]' (FD) to 'c33/base_reg[4]'
-INFO: [Synth 8-3886] merging instance 'c33/base_reg[4]' (FD) to 'c33/base_reg[5]'
-INFO: [Synth 8-3886] merging instance 'c33/base_reg[5]' (FD) to 'c33/base_reg[9]'
-INFO: [Synth 8-3886] merging instance 'c33/base_reg[6]' (FD) to 'c33/base_reg[12]'
-INFO: [Synth 8-3886] merging instance 'c33/base_reg[7]' (FD) to 'c33/base_reg[8]'
-INFO: [Synth 8-3886] merging instance 'c33/base_reg[8]' (FD) to 'c33/base_reg[15]'
-INFO: [Synth 8-3886] merging instance 'c33/base_reg[9]' (FD) to 'c33/base_reg[10]'
+INFO: [Synth 8-3886] merging instance 'c33/base_reg[0]' (FD) to 'c33/base_reg[23]'
+INFO: [Synth 8-3886] merging instance 'c33/base_reg[1]' (FD) to 'c33/base_reg[23]'
+INFO: [Synth 8-3886] merging instance 'c33/base_reg[2]' (FD) to 'c33/base_reg[23]'
+INFO: [Synth 8-3886] merging instance 'c33/base_reg[3]' (FD) to 'c33/base_reg[23]'
+INFO: [Synth 8-3886] merging instance 'c33/base_reg[4]' (FD) to 'c33/base_reg[23]'
+INFO: [Synth 8-3886] merging instance 'c33/base_reg[5]' (FD) to 'c33/base_reg[23]'
+INFO: [Synth 8-3886] merging instance 'c33/base_reg[6]' (FD) to 'c33/base_reg[24]'
+INFO: [Synth 8-3886] merging instance 'c33/base_reg[7]' (FD) to 'c33/base_reg[17]'
+INFO: [Synth 8-3886] merging instance 'c33/base_reg[8]' (FD) to 'c33/base_reg[17]'
+INFO: [Synth 8-3886] merging instance 'c33/base_reg[9]' (FD) to 'c33/base_reg[23]'
 INFO: [Synth 8-3886] merging instance 'c33/base_reg[10]' (FD) to 'c33/base_reg[23]'
-INFO: [Synth 8-3886] merging instance 'c33/base_reg[11]' (FD) to 'c33/base_reg[13]'
-INFO: [Synth 8-3886] merging instance 'c33/base_reg[12]' (FD) to 'c33/base_reg[14]'
+INFO: [Synth 8-3886] merging instance 'c33/base_reg[11]' (FD) to 'c33/base_reg[16]'
+INFO: [Synth 8-3886] merging instance 'c33/base_reg[12]' (FD) to 'c33/base_reg[24]'
 INFO: [Synth 8-3886] merging instance 'c33/base_reg[13]' (FD) to 'c33/base_reg[16]'
-INFO: [Synth 8-3886] merging instance 'c33/base_reg[14]' (FD) to 'c33/base_reg[18]'
+INFO: [Synth 8-3886] merging instance 'c33/base_reg[14]' (FD) to 'c33/base_reg[24]'
 INFO: [Synth 8-3886] merging instance 'c33/base_reg[15]' (FD) to 'c33/base_reg[17]'
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\c33/base_reg[16] )
-INFO: [Synth 8-3886] merging instance 'c33/base_reg[18]' (FD) to 'c33/base_reg[19]'
-INFO: [Synth 8-3886] merging instance 'c33/base_reg[19]' (FD) to 'c33/base_reg[20]'
-INFO: [Synth 8-3886] merging instance 'c33/base_reg[20]' (FD) to 'c33/base_reg[21]'
-INFO: [Synth 8-3886] merging instance 'c33/base_reg[21]' (FD) to 'c33/base_reg[22]'
+INFO: [Synth 8-3886] merging instance 'c33/base_reg[18]' (FD) to 'c33/base_reg[24]'
+INFO: [Synth 8-3886] merging instance 'c33/base_reg[19]' (FD) to 'c33/base_reg[24]'
+INFO: [Synth 8-3886] merging instance 'c33/base_reg[20]' (FD) to 'c33/base_reg[24]'
+INFO: [Synth 8-3886] merging instance 'c33/base_reg[21]' (FD) to 'c33/base_reg[24]'
 INFO: [Synth 8-3886] merging instance 'c33/base_reg[22]' (FD) to 'c33/base_reg[24]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\c33/base_reg[23] )
 INFO: [Synth 8-3886] merging instance 'rr/red_reg[0]' (FD) to 'rr/red_reg[1]'
@@ -307,7 +327,7 @@ INFO: [Synth 8-3886] merging instance 'rr/red_reg[2]' (FD) to 'rr/red_reg[3]'
 WARNING: [Synth 8-3332] Sequential element (c33/base_reg[23]) is unused and will be removed from module top_module.
 WARNING: [Synth 8-3332] Sequential element (c33/base_reg[16]) is unused and will be removed from module top_module.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 621.930 ; gain = 411.504
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 634.148 ; gain = 423.992
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -324,10 +344,10 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'xxx/clk_out1' to pin 'xxx/bbstub_clk_out1/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 621.930 ; gain = 411.504
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 634.148 ; gain = 423.992
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 622.367 ; gain = 411.941
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 644.863 ; gain = 434.707
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -338,8 +358,9 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (rr/Y_paddle_reg[10]) is unused and will be removed from module top_module.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 631.746 ; gain = 421.320
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 650.098 ; gain = 439.941
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -363,7 +384,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 631.746 ; gain = 421.320
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 650.098 ; gain = 439.941
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -376,7 +397,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 631.746 ; gain = 421.320
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 650.098 ; gain = 439.941
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -388,94 +409,97 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 631.746 ; gain = 421.320
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 650.098 ; gain = 439.941
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 631.746 ; gain = 421.320
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 650.098 ; gain = 439.941
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 631.746 ; gain = 421.320
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 650.098 ; gain = 439.941
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 631.746 ; gain = 421.320
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 650.098 ; gain = 439.941
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+------+-----------------+----------+
-|      |BlackBox name    |Instances |
-+------+-----------------+----------+
-|1     |clk_wiz_0        |         1|
-|2     |blk_mem_gen_0    |         1|
-|3     |blk_mem_gen_ball |         1|
-+------+-----------------+----------+
++------+--------------------+----------+
+|      |BlackBox name       |Instances |
++------+--------------------+----------+
+|1     |clk_wiz_0           |         1|
+|2     |blk_mem_gen_0       |         1|
+|3     |blk_mem_gen_paddle2 |         1|
+|4     |blk_mem_gen_ball    |         1|
++------+--------------------+----------+
 
 Report Cell Usage: 
-+------+----------------------+------+
-|      |Cell                  |Count |
-+------+----------------------+------+
-|1     |blk_mem_gen_0_bbox    |     1|
-|2     |blk_mem_gen_ball_bbox |     1|
-|3     |clk_wiz_0_bbox        |     1|
-|4     |BUFG                  |     1|
-|5     |CARRY4                |    34|
-|6     |LUT1                  |    26|
-|7     |LUT2                  |    43|
-|8     |LUT3                  |    33|
-|9     |LUT4                  |    79|
-|10    |LUT5                  |    70|
-|11    |LUT6                  |   122|
-|12    |MUXF7                 |     4|
-|13    |MUXF8                 |     2|
-|14    |FDRE                  |    78|
-|15    |FDSE                  |    13|
-|16    |LD                    |     2|
-|17    |IBUF                  |     4|
-|18    |OBUF                  |    25|
-|19    |OBUFT                 |     5|
-+------+----------------------+------+
++------+-------------------------+------+
+|      |Cell                     |Count |
++------+-------------------------+------+
+|1     |blk_mem_gen_0_bbox       |     1|
+|2     |blk_mem_gen_ball_bbox    |     1|
+|3     |blk_mem_gen_paddle2_bbox |     1|
+|4     |clk_wiz_0_bbox           |     1|
+|5     |BUFG                     |     1|
+|6     |CARRY4                   |    44|
+|7     |LUT1                     |    30|
+|8     |LUT2                     |    43|
+|9     |LUT3                     |    42|
+|10    |LUT4                     |    93|
+|11    |LUT5                     |    80|
+|12    |LUT6                     |   173|
+|13    |MUXF7                    |     5|
+|14    |MUXF8                    |     2|
+|15    |FDRE                     |    90|
+|16    |FDSE                     |    11|
+|17    |LD                       |     3|
+|18    |IBUF                     |     4|
+|19    |OBUF                     |    25|
+|20    |OBUFT                    |     5|
++------+-------------------------+------+
 
 Report Instance Areas: 
 +------+---------+------------+------+
 |      |Instance |Module      |Cells |
 +------+---------+------------+------+
-|1     |top      |            |   575|
+|1     |top      |            |   701|
 |2     |  c33    |clock       |    73|
-|3     |  db     |debounce    |     6|
-|4     |  rr     |vga_sprite  |   330|
-|5     |  vga    |vga_640x480 |    97|
+|3     |  db     |debounce    |     5|
+|4     |  rr     |vga_sprite  |   406|
+|5     |  vga    |vga_640x480 |   132|
 +------+---------+------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 631.746 ; gain = 421.320
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 650.098 ; gain = 439.941
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 23 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 631.746 ; gain = 115.816
-Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 631.746 ; gain = 421.320
+Synthesis finished with 0 errors, 0 critical warnings and 25 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 650.098 ; gain = 122.566
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 650.098 ; gain = 439.941
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 40 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 51 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-138] Pushed 2 inverter(s) to 2 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 2 instances were transformed.
-  LD => LDCE: 2 instances
+  A total of 3 instances were transformed.
+  LD => LDCE: 1 instances
+  LD => LDCE (inverted pins: G): 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-87 Infos, 75 Warnings, 2 Critical Warnings and 0 Errors encountered.
+92 Infos, 82 Warnings, 2 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 631.746 ; gain = 421.320
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 650.102 ; gain = 434.871
 INFO: [Common 17-1381] The checkpoint 'D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.runs/synth_1/top_module.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 631.746 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Mon Aug 13 17:16:45 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 650.102 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Aug 14 13:27:04 2018...

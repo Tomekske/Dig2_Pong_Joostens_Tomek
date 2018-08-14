@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date         : Mon Aug 13 17:16:45 2018
+| Date         : Tue Aug 14 13:27:04 2018
 | Host         : DESKTOP-JKG1DO6 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_module_utilization_synth.rpt -pb top_module_utilization_synth.pb
 | Design       : top_module
@@ -30,13 +30,13 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  296 |     0 |     20800 |  1.42 |
-|   LUT as Logic          |  296 |     0 |     20800 |  1.42 |
+| Slice LUTs*             |  367 |     0 |     20800 |  1.76 |
+|   LUT as Logic          |  367 |     0 |     20800 |  1.76 |
 |   LUT as Memory         |    0 |     0 |      9600 |  0.00 |
-| Slice Registers         |   93 |     0 |     41600 |  0.22 |
-|   Register as Flip Flop |   91 |     0 |     41600 |  0.22 |
-|   Register as Latch     |    2 |     0 |     41600 | <0.01 |
-| F7 Muxes                |    4 |     0 |     16300 |  0.02 |
+| Slice Registers         |  104 |     0 |     41600 |  0.25 |
+|   Register as Flip Flop |  101 |     0 |     41600 |  0.24 |
+|   Register as Latch     |    3 |     0 |     41600 | <0.01 |
+| F7 Muxes                |    5 |     0 |     16300 |  0.03 |
 | F8 Muxes                |    2 |     0 |      8150 |  0.02 |
 +-------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -55,9 +55,9 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 2     |          Yes |           - |        Reset |
-| 13    |          Yes |         Set |            - |
-| 78    |          Yes |       Reset |            - |
+| 3     |          Yes |           - |        Reset |
+| 11    |          Yes |         Set |            - |
+| 90    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -149,21 +149,21 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     |  122 |                 LUT |
-| LUT4     |   79 |                 LUT |
-| FDRE     |   78 |        Flop & Latch |
-| LUT5     |   70 |                 LUT |
+| LUT6     |  173 |                 LUT |
+| LUT4     |   93 |                 LUT |
+| FDRE     |   90 |        Flop & Latch |
+| LUT5     |   80 |                 LUT |
+| CARRY4   |   44 |          CarryLogic |
 | LUT2     |   43 |                 LUT |
-| CARRY4   |   34 |          CarryLogic |
-| LUT3     |   33 |                 LUT |
-| LUT1     |   26 |                 LUT |
+| LUT3     |   42 |                 LUT |
+| LUT1     |   28 |                 LUT |
 | OBUF     |   25 |                  IO |
-| FDSE     |   13 |        Flop & Latch |
+| FDSE     |   11 |        Flop & Latch |
 | OBUFT    |    5 |                  IO |
+| MUXF7    |    5 |               MuxFx |
 | IBUF     |    5 |                  IO |
-| MUXF7    |    4 |               MuxFx |
+| LDCE     |    3 |        Flop & Latch |
 | MUXF8    |    2 |               MuxFx |
-| LDCE     |    2 |        Flop & Latch |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
@@ -171,13 +171,14 @@ Table of Contents
 8. Black Boxes
 --------------
 
-+------------------+------+
-|     Ref Name     | Used |
-+------------------+------+
-| clk_wiz_0        |    1 |
-| blk_mem_gen_ball |    1 |
-| blk_mem_gen_0    |    1 |
-+------------------+------+
++---------------------+------+
+|       Ref Name      | Used |
++---------------------+------+
+| clk_wiz_0           |    1 |
+| blk_mem_gen_paddle2 |    1 |
+| blk_mem_gen_ball    |    1 |
+| blk_mem_gen_0       |    1 |
++---------------------+------+
 
 
 9. Instantiated Netlists
