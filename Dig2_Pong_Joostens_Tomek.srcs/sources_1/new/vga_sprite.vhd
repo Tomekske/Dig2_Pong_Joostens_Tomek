@@ -279,7 +279,6 @@ begin
             if btn_start = '1' then
                 ball_fall <= '0';
                 ball_down <= '0';
-                direction <= "0101";
                 qml <= '0';             
 
             end if;
@@ -291,7 +290,8 @@ begin
                 q1 <= '1';             
                 q2 <= '1';                  
                 q3 <= '1';             
-                q1 <= '1';                  
+                q1 <= '1'; 
+                direction <= (others => '1');                 
                 qml <= '1';             
                 qmr <= '1';             
             end if;
@@ -301,67 +301,68 @@ begin
                         X_ball <= conv_std_logic_vector(conv_integer(X_ball) - 1,11);
                     elsif qmr = '0' then
                         X_ball <= conv_std_logic_vector(conv_integer(X_ball) + 1,11);
-                    elsif q1 = '0' then
+                    elsif direction(0) = '0' then
                                 if Y_ball >= conv_std_logic_vector(conv_integer(ball_max_top),11) and X_ball <= conv_std_logic_vector(conv_integer(X_paddle2),11)then
                                     
                                     X_ball <= conv_std_logic_vector(conv_integer(X_ball) + 1,11);
                                     Y_ball <= conv_std_logic_vector(conv_integer(Y_ball) - 1,11);
                                 elsif X_ball >= X_paddle2 and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle2)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle2)+ paddle_offset,11) then
-                                        q1 <= '1';
-                                        q2 <= '1';
                                         qmr <= '1';
                                         qml <= '0';
+                                        direction <= (others => '1');                 
+
                                 else
-                                    
-                                    q1 <= '1';
-                                    q2 <= '0';
+                                    direction <= "1101";                 
                                 end if;
-                    elsif q2 = '0' then
+                                
+                    elsif direction(1) = '0' then
                                 if Y_ball <= conv_std_logic_vector(conv_integer(ball_max_bottom),11) and X_ball <= conv_std_logic_vector(conv_integer(X_paddle2),11) then
                                     X_ball <= conv_std_logic_vector(conv_integer(X_ball) + 1,11);
                                     Y_ball <= conv_std_logic_vector(conv_integer(Y_ball) + 1,11);
                                 elsif X_ball = X_paddle2 and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle2)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle2)+ paddle_offset,11) then
-                                    q1 <= '1';
-                                    q2 <= '1';
                                     qmr <= '1';
-                                         qml <= '0';
+                                    direction <= (others => '1');                 
+                                    qml <= '0';
                                
                                 else
-                                    q1 <= '0';
-                                    q2 <= '1';
+                                    direction <= "1110";                 
                                    
                                 end if;
                    end if;              
                     if qml ='0' and X_ball <= X_paddle and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle)+ paddle_offset,11) then
+                            -- ball goes from left side to the right side
                             if  X_ball <= X_paddle and Y_ball = Y_paddle then
                                 qml <= '1';
                                 qmr <= '0';
-                                q1 <= '1';
-
+                                direction <= (others => '1');                 
+                            -- ball rechtsboven
                             elsif X_ball = X_paddle and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle),11) then
                                 qml <= '1';
-                                qmr <= '1';
-                                q1 <= '0';
+                                qmr <= '1';     
+                                direction <= "1110";                 
+                            -- rechts beneden
                             elsif X_ball = X_paddle and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle)+paddle_offset,11) and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle),11) then
                                 qml <= '1';
                                 qmr <= '1';
-                                q1 <= '1';
-                                q2 <= '0';                      
+                                direction <= "1101";                 
                             end if;
+                            
                     elsif qmr ='0' and X_ball >= X_paddle2 and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle2)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle2)+ paddle_offset,11) then
-                             if  X_ball = X_paddle2 and Y_ball = Y_paddle2 then
+                             -- ball goes from right side to the left side
+                             if  X_ball = X_paddle2 and Y_ball = conv_std_logic_vector(conv_integer(Y_paddle2),11) then
                                 qml <= '0';
                                 qmr <= '1';
-                                q1 <= '1';
+                                direction <= (others => '1');
+                            elsif X_ball = X_paddle2 and Y_ball > conv_std_logic_vector(conv_integer(Y_paddle_start2), 11) then
+                                
+                            elsif X_ball = X_paddle2 and Y_ball < conv_std_logic_vector(conv_integer(Y_paddle_start2), 11) then                 
                             end if;
                     elsif (qml ='0') and (X_ball < (conv_std_logic_vector(conv_integer(X_paddle_start),11))) then
                         ball_fall <= '1';  
                         Y_ball <=  conv_std_logic_vector(conv_integer(Y_ball_start),11);
                         X_ball <= conv_std_logic_vector(conv_integer(X_ball_start),11);
-                        q1 <= '1';             
-                        q2 <= '1';                  
-                        q3 <= '1';             
-                        q1 <= '1';                  
+                        direction <= (others => '1');                 
+                  
                         qml <= '1';             
                         qmr <= '1';
                     end if;
