@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_2" LaunchPart="xc7a35tcpg236-1" LaunchTime="1533830932">
-  <File Type="PWROPT-DRC" Name="top_module_drc_pwropted.rpt"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="top_module_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="top_module_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR-RPX" Name="top_module_power_routed.rpx"/>
   <File Type="PA-TCL" Name="top_module.tcl"/>
-  <File Type="OPT-HWDEF" Name="top_module.hwdef"/>
+  <File Type="INIT-TIMING" Name="top_module_timing_summary_init.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="top_module_methodology_drc_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="top_module_drc_pwropted.rpt"/>
   <File Type="RDI-RDI" Name="top_module.vdi"/>
   <File Type="OPT-DCP" Name="top_module_opt.dcp"/>
+  <File Type="OPT-HWDEF" Name="top_module.hwdef"/>
   <File Type="OPT-DRC" Name="top_module_drc_opted.rpt"/>
   <File Type="OPT-TIMING" Name="top_module_timing_summary_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="top_module_pwropt.dcp"/>
@@ -31,14 +31,14 @@
   <File Type="ROUTE-BLACKBOX-DCP" Name="top_module_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="top_module_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="top_module_drc_routed.pb"/>
-  <File Type="BG-BIN" Name="top_module.bin"/>
   <File Type="ROUTE-DRC-RPX" Name="top_module_drc_routed.rpx"/>
-  <File Type="BG-DRC" Name="top_module.drc"/>
+  <File Type="BG-BIN" Name="top_module.bin"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="top_module_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-MSK" Name="top_module.msk"/>
+  <File Type="BG-DRC" Name="top_module.drc"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="top_module_methodology_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="top_module.bgn"/>
+  <File Type="BITSTR-MSK" Name="top_module.msk"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="top_module_methodology_drc_routed.pb"/>
+  <File Type="BG-BGN" Name="top_module.bgn"/>
   <File Type="ROUTE-PWR" Name="top_module_power_routed.rpt"/>
   <File Type="ROUTE-PWR-SUM" Name="top_module_power_summary_routed.pb"/>
   <File Type="ROUTE-STATUS" Name="top_module_route_status.rpt"/>
