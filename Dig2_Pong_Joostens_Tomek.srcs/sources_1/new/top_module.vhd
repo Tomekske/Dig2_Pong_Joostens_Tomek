@@ -178,7 +178,9 @@ component vga_sprite is
  btn_down: in std_logic;
  btn_reset: in STD_LOGIC;
  btn_start: in STD_LOGIC;
- scored: out STD_LOGIC
+ scored: out STD_LOGIC;
+   rst: out STD_LOGIC
+
   );
 end component;
 component clkdiv is
@@ -281,7 +283,7 @@ signal stop: std_logic;
 signal en_nxt,en_nxt1,en_nxt2,and1: std_logic;
 signal een, tien, honderd, duizend :  STD_LOGIC_VECTOR(3 downto 0);
 
-signal scored: STD_LOGIC;
+signal scored, rst: STD_LOGIC;
 signal sscore: STD_LOGIC_VECTOR (3 downto 0) := "0000";
 signal score_seg1: STD_LOGIC_VECTOR (3 downto 0) := "0000";
 signal score_seg2: STD_LOGIC_VECTOR (3 downto 0) := "0000";
@@ -320,9 +322,10 @@ rr: vga_sprite Port Map(clk => clk,clk60 => clk60,
                         sw => sw,
                         rom_sprite_paddle => rom_sprite_paddle,rom_sprite_paddle2 => rom_sprite_paddle2, rom_sprite_ball => rom_sprite_ball,
                         red => vgaRed,green => vgaGreen,blue => vgaBlue, 
-                        btn_up => db_btn_up, btn_down => db_btn_down,btn_reset => db_btn_reset, btn_start => db_btn_start, scored => scored);
+                        btn_up => db_btn_up, btn_down => db_btn_down,btn_reset => db_btn_reset, btn_start => db_btn_start, 
+                        scored => scored, rst => rst);
                         
-count_eenheden: count10 Port map(clk => clk,rst => '0',en => '1',en_next => en_nxt , count => score_seg1, scored => scored);
-tens: count10 Port map(clk => clk,rst => '0', en => en_nxt, en_next => en_nxt1,count => score_seg2, scored => scored);
+count_eenheden: count10 Port map(clk => clk,rst => rst,en => '1',en_next => en_nxt , count => score_seg1, scored => scored);
+tens: count10 Port map(clk => clk,rst => rst, en => en_nxt, en_next => en_nxt1,count => score_seg2, scored => scored);
 
 end Behavioral;                                                                            

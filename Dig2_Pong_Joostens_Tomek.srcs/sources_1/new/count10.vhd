@@ -52,8 +52,9 @@ signal score : std_logic;
 begin
 process(clk, rst) begin
           enable_next <= '0';
-
-        if  falling_edge(scored) and rising_edge(clk) and en = '1' then
+        if (rst = '0') then
+            count_int <= "0000";
+        elsif  falling_edge(scored) and rising_edge(clk) and en = '1' then
                 count_int <= count_int + 1;
                 if count_int = "1000" then
                    enable_next <= '1';

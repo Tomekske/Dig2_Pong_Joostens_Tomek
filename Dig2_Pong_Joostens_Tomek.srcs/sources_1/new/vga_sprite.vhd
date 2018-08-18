@@ -76,12 +76,27 @@ Port (
   btn_down: in std_logic;
   btn_reset: in STD_LOGIC;
   btn_start: in STD_LOGIC;
-  scored: out STD_LOGIC
+  scored: out STD_LOGIC;
+  rst: out STD_LOGIC := '1'
 );
 end vga_sprite;
 
 
 architecture Behavioral of vga_sprite is
+
+-- constants
+constant vc_left_centerline: integer := 150;
+constant vc_rigt_centerline: integer := 775;
+constant vc_centerline: integer := ((vc_rigt_centerline - vc_left_centerline) / 2) + vc_left_centerline;
+
+constant hc_topline: integer := 150;
+constant hc_bottomline: integer := 400;
+constant hc_centerline: integer := ((hc_bottomline - hc_topline) / 2) + hc_topline;
+
+
+
+
+
 
 constant hbp: std_logic_vector(9 downto 0) := "0010010000"; --144
 constant vbp: std_logic_vector(9 downto 0) := "0000011111"; --31
@@ -95,19 +110,19 @@ constant paddle_offset_start: integer := 6;
 constant Y_ball_start: integer := 236;
 constant X_ball_start: integer := 310;
 
-constant Y_paddle_start: integer := 236;
+constant Y_paddle_start: integer := 236 - 40;
 constant X_paddle_start: integer := ball_max_left + paddle_offset_start;
 
-constant Y_paddle_start2: integer := 236;
+constant Y_paddle_start2: integer := 236 + 40;
 constant X_paddle_start2: integer := ball_max_right - paddle_offset_start;
 
 
 
-constant ball_max_top: integer := 66;
-constant ball_max_bottom: integer := 408;
+constant ball_max_top: integer := (hc_topline - 35);
+constant ball_max_bottom: integer := (hc_bottomline - 42);
 
-constant paddle_max_top: integer := 70;
-constant paddle_max_bottom: integer := 403;
+constant paddle_max_top: integer := (hc_topline - 30);
+constant paddle_max_bottom: integer := (hc_bottomline - 47);
 signal X_paddle: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(X_paddle_start),11);
 signal Y_paddle: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(Y_paddle_start),11);
 
@@ -151,15 +166,6 @@ constant hb: integer := 16;
 constant w2: integer := 16;
 constant h2: integer := 16;
 
--- constants
-constant vc_left_centerline: integer := 150;
-constant vc_rigt_centerline: integer := 775;
-constant vc_centerline: integer := ((vc_rigt_centerline - vc_left_centerline) / 2) + vc_left_centerline;
-
-constant hc_topline: integer := 100;
-constant hc_bottomline: integer := 450;
-constant hc_centerline: integer := ((hc_bottomline - hc_topline) / 2) + hc_topline;
-
 constant paddle_offset: integer := 8; 
 constant paddle_max: integer := conv_integer(Y_paddle) - 20; 
 constant paddle_min: integer := conv_integer(Y_paddle) + 20; 
@@ -173,8 +179,8 @@ signal reset_paddle: std_logic := '1';
 signal reset_ball: std_logic := '1';
 signal reset: std_logic := '1';
 signal collision: std_logic := '1';
-
-signal q1,q2,q3,q4,qml,qmr,dir_right,dir_left,start,ball: std_logic := '1';
+signal sr1,sr2: std_logic := '1';
+signal q1,q2,q3,q4,qml,qmr,dir_right,dir_left,start,game_over,ball: std_logic := '1';
 signal direction: std_logic_vector (3 downto 0);
 -- variables
 begin
@@ -201,11 +207,11 @@ begin
                 red_bg <= "1111";
                 green_bg <= "1111";
                 blue_bg <= "1111";
-            -- horizontaal midden       
-            elsif vc = hc_centerline and (hc >= vc_left_centerline and hc <= vc_rigt_centerline) then
-                red_bg <= "1111";
-                green_bg <= "1111";
-                blue_bg <= "1111";
+--            -- horizontaal midden       
+--            elsif vc = hc_centerline and (hc >= vc_left_centerline and hc <= vc_rigt_centerline) then
+--                red_bg <= "1111";
+--                green_bg <= "1111";
+--                blue_bg <= "1111";
                 -- horizontaal beneden    
             -- horizontaal boven       
             elsif vc = hc_topline and (hc >= vc_left_centerline and hc <= vc_rigt_centerline) then
@@ -226,9 +232,13 @@ begin
     process(vidon,clk60,btn_up,btn_down,btn_reset) begin
         if btn_reset = '1' then                          --paddle reset
             Y_paddle<=  conv_std_logic_vector(conv_integer(Y_paddle_start),11);
-            X_paddle <= conv_std_logic_vector(conv_integer(X_paddle_start),11);   
+            X_paddle <= conv_std_logic_vector(conv_integer(X_paddle_start),11); 
+  
         end if;
-        
+        if game_over = '0' then
+            Y_paddle <=  conv_std_logic_vector(conv_integer(Y_paddle_start),11);
+            X_paddle <= conv_std_logic_vector(conv_integer(X_paddle_start),11);
+        end if;
         if rising_edge(clk60) then
             --paddle boven
             if btn_up = '1' and vidon = '1' then
@@ -249,18 +259,25 @@ begin
     process(vidon,clk60,btn_reset) begin
         if btn_reset = '1' then                          --paddle reset
             Y_paddle2 <=  conv_std_logic_vector(conv_integer(Y_paddle_start2),11);
-            X_paddle2 <= conv_std_logic_vector(conv_integer(X_paddle_start2),11);   
+            X_paddle2 <= conv_std_logic_vector(conv_integer(X_paddle_start2),11);
+               
         end if;
         
         if rising_edge(clk60) then
             if vidon = '1' then
+                 game_over <= '1';
                 --paddle boven
-                if y_ball >= conv_std_logic_vector(conv_integer(paddle_max_top),11) then
-                    Y_paddle2 <= conv_std_logic_vector(conv_integer(y_ball),11);
+                if y_ball >= conv_std_logic_vector(conv_integer(paddle_max_top),11) and start = '0' then           
+                        Y_paddle2 <= conv_std_logic_vector(conv_integer(y_ball),11);
+                
                 --paddle beneden
-                elsif y_ball <= conv_std_logic_vector(conv_integer(paddle_max_bottom),11) then
+                elsif y_ball <= conv_std_logic_vector(conv_integer(paddle_max_bottom),11) and start = '0' then
                     Y_paddle2 <= conv_std_logic_vector(conv_integer(y_ball),11);
-
+                end if;
+                if game_over = '0' then
+                    Y_paddle2 <=  conv_std_logic_vector(conv_integer(Y_paddle_start2),11);
+                    X_paddle2 <= conv_std_logic_vector(conv_integer(X_paddle_start2),11);
+                    
                 end if;
             end if;
         end if;
@@ -270,18 +287,24 @@ begin
     process(btn_reset) begin
         if btn_reset = '1' and reset_paddle ='1' and reset_ball = '1' then                          --paddle reset
                 reset <= '0';
+                
         end if;
     end process;
     --ball logic
-    process(vidon,clk60,btn_start,direction) begin     
+    process(vidon,clk60,btn_start,direction,sr1) begin     
         if rising_edge(clk60) then
             -- press btn to start game 
             if btn_start = '1' then
                 ball_fall <= '0';
                 ball_down <= '0';
-                qml <= '0';             
+                qml <= '0'; 
+                rst <= '0';
+                start <= '0';
+                game_over <= '1';            
             else
                 scored <= '1';
+                rst <= '1';            
+
             end if;
             -- press reset btn to reset game
             if btn_reset = '1' then                          
@@ -290,11 +313,18 @@ begin
                 X_ball <= conv_std_logic_vector(conv_integer(X_ball_start),11);
                 direction <= (others => '1');                 
                 qml <= '1';             
-                qmr <= '1';             
+                qmr <= '1';
+                rst <= '0';
+                game_over <= '1';
+                start <= '1';
+             
             end if;
         -- logic       
             if  vidon = '1' and ball_fall = '0' then
+                     game_over <= '1';
                     if qml = '0' then
+                                               
+
                         X_ball <= conv_std_logic_vector(conv_integer(X_ball) - 1,11);
                     elsif qmr = '0' then
                         X_ball <= conv_std_logic_vector(conv_integer(X_ball) + 1,11);
@@ -397,14 +427,16 @@ begin
                         Y_ball <=  conv_std_logic_vector(conv_integer(Y_ball_start),11);
                         X_ball <= conv_std_logic_vector(conv_integer(X_ball_start),11);
                         direction <= (others => '1');                 
+                        rst <= '1';
                   
                         qml <= '1';             
                         qmr <= '1';
+                        
+                        game_over <= '0';
                     end if;
             end if; 
         end if;
     end process; 
-
     rom_addr <= vc - vbp - Y_paddle;
     rom_pix <= hc - hbp - X_paddle;  
     rom_sprite_paddle <= rom_addr(3 downto 0);   
