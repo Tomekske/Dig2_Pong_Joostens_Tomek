@@ -28,6 +28,7 @@ set_property used_in_implementation false [get_files d:/Programs/Developing/Dig2
 add_files -quiet d:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/ip/blk_mem_gen_ball/blk_mem_gen_ball.dcp
 set_property used_in_implementation false [get_files d:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/ip/blk_mem_gen_ball/blk_mem_gen_ball.dcp]
 read_vhdl -library xil_defaultlib {
+  D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/count10.vhd
   D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_sprite.vhd
   D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/vga_640x480.vhd
   D:/Programs/Developing/Dig2_Pong_Joostens_Tomek/Dig2_Pong_Joostens_Tomek.srcs/sources_1/new/seg7.vhd

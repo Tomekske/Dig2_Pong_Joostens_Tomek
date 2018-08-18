@@ -58,7 +58,7 @@ process(clk, div) begin
                     when "00" => base <= 100000;
                     when "01" => base <= 240000;
                     when "10" => base <= 200000;
-                    when "11" => base <= 3;
+                    when "11" => base <= 30000000;
                     when others => base <=250000;
              end case;
          end if;

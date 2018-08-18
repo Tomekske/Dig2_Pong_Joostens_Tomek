@@ -75,7 +75,8 @@ Port (
   btn_up: in std_logic;
   btn_down: in std_logic;
   btn_reset: in STD_LOGIC;
-  btn_start: in STD_LOGIC
+  btn_start: in STD_LOGIC;
+  scored: out STD_LOGIC
 );
 end vga_sprite;
 
@@ -175,7 +176,6 @@ signal collision: std_logic := '1';
 
 signal q1,q2,q3,q4,qml,qmr,dir_right,dir_left,start,ball: std_logic := '1';
 signal direction: std_logic_vector (3 downto 0);
-
 -- variables
 begin
 
@@ -280,7 +280,8 @@ begin
                 ball_fall <= '0';
                 ball_down <= '0';
                 qml <= '0';             
-
+            else
+                scored <= '1';
             end if;
             -- press reset btn to reset game
             if btn_reset = '1' then                          
@@ -348,24 +349,33 @@ begin
                    end if;              
                     if  X_ball <= X_paddle and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle)+ paddle_offset,11) then
                             -- ball goes from left side to the right side
+ 
+                                 scored <= '0';
+ 
+ 
                             if  qml ='0' and X_ball <= X_paddle and Y_ball = Y_paddle then
                                 qml <= '1';
                                 qmr <= '0';
-                                direction <= (others => '1');                 
+                                direction <= (others => '1');
+                
                             -- ball rechtsboven
                             elsif X_ball = X_paddle and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle),11) then
                                 direction <= "1110";
                                 qml <= '1';
                                 qmr <= '1';
-                 
+
                             -- rechts beneden
                             elsif X_ball = X_paddle and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle)+paddle_offset,11) and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle),11) then
                                 direction <= "1101";
                                 qml <= '1';
-                                qmr <= '1';                 
+                                qmr <= '1';
+--                                                scored <= '0';
+                 
                             end if;
                             
                     elsif X_ball >= X_paddle2 and Y_ball >= conv_std_logic_vector(conv_integer(Y_paddle2)-paddle_offset,11) and Y_ball <= conv_std_logic_vector(conv_integer(Y_paddle2)+ paddle_offset,11) then
+                                 scored <= '1';
+
                              -- ball goes from right side to the left side
                              if  qmr = '0' and X_ball = X_paddle2 and Y_ball = conv_std_logic_vector(conv_integer(Y_paddle2),11) then
                                 qml <= '0';
@@ -413,7 +423,7 @@ begin
     --Enable sprite video out when within the sprite region
     spriteon2 <= '1' when (((hc >= X_paddle2 + hbp) and (hc < X_paddle2 + hbp + w2)) and ((vc >= Y_paddle2 + vbp) and (vc < Y_paddle2 + vbp + h2))) else '0';
 
-  
+    
     process(spriteon, vidon, rom_pix, M)
         variable j: integer;
         

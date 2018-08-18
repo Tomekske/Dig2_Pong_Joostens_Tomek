@@ -88,9 +88,10 @@ component seg7 is
 
 component mux21 is
     Port ( 
-    sel: in STD_LOGIC_VECTOR (1 downto 0);
-    an: out STD_LOGIC_VECTOR (3 downto 0)
-    );
+            data : in STD_LOGIC_VECTOR (15 downto 0); -- remane this are not switches
+            clk : in STD_LOGIC;
+            displaynr : out STD_LOGIC_VECTOR (3 downto 0);
+            an : out STD_LOGIC_VECTOR (3 downto 0));
 end component mux21;
 
 
@@ -176,8 +177,8 @@ component vga_sprite is
  btn_up: in std_logic;
  btn_down: in std_logic;
  btn_reset: in STD_LOGIC;
- btn_start: in STD_LOGIC
-
+ btn_start: in STD_LOGIC;
+ scored: out STD_LOGIC
   );
 end component;
 component clkdiv is
@@ -237,11 +238,26 @@ component clock is
            clk_slow : out STD_LOGIC);
 end component;
 
+
+
+
+
+
+
+component count10 is
+    Port ( clk : in STD_LOGIC;
+           rst : in STD_LOGIC;
+           en : in STD_LOGIC;
+           en_next :out STD_LOGIC;
+           count : out STD_LOGIC_VECTOR (3 downto 0);
+           scored: in STD_LOGIC
+           );
+end component;
 -- ####################################################
 -- ####################################################
 
 signal div: STD_LOGIC;
-signal knop: STD_LOGIC;
+signal db_btn_up, db_btn_down, db_btn_start, db_btn_reset: STD_LOGIC;
 signal counter: STD_LOGIC_VECTOR (1 downto 0);
 signal vierkant: STD_LOGIC_VECTOR (3 downto 0);
 signal vvv: STD_LOGIC_VECTOR (3 downto 0);
@@ -259,6 +275,19 @@ signal rom_sprite_paddle2 : STD_LOGIC_VECTOR (3 downto 0);
 signal rom_sprite_ball: STD_LOGIC_VECTOR (3 downto 0);
 
 signal clk60: std_logic;
+signal clk30: std_logic;
+signal displaynr: STD_LOGIC_VECTOR (3 downto 0);
+signal stop: std_logic;
+signal en_nxt,en_nxt1,en_nxt2,and1: std_logic;
+signal een, tien, honderd, duizend :  STD_LOGIC_VECTOR(3 downto 0);
+
+signal scored: STD_LOGIC;
+signal sscore: STD_LOGIC_VECTOR (3 downto 0) := "0000";
+signal score_seg1: STD_LOGIC_VECTOR (3 downto 0) := "0000";
+signal score_seg2: STD_LOGIC_VECTOR (3 downto 0) := "0000";
+signal score_seg3: STD_LOGIC_VECTOR (3 downto 0) := "0000";
+signal score_seg4: STD_LOGIC_VECTOR (3 downto 0) := "0000";
+signal score: STD_LOGIC_VECTOR (15 downto 0) := score_seg4 & score_seg3 & score_seg2 & score_seg1;
 -- ####################################################
 -- ####################################################
 
@@ -266,10 +295,14 @@ begin
 --clock: clock_div Port map(clk_in => clk,clk_out => div);
 --cclock: clkdiv Port map(clk => clk,clr => clr,clk25 => div);
 c33: clock Port map (clk => clk, div => "01", clk_slow => clk60);
-db: debounce Port map(clk => clk, sig_in => btn_up, sig_out => knop);
+csnel: clock Port map (clk => clk, div => "11", clk_slow => clk30);
+db_up: debounce Port map(clk => clk, sig_in => btn_up, sig_out => db_btn_up);
+db_down: debounce Port map(clk => clk, sig_in => btn_down, sig_out => db_btn_down);
+db_start: debounce Port map(clk => clk, sig_in => btn_start, sig_out => db_btn_start);
+db_reset: debounce Port map(clk => clk, sig_in => btn_reset, sig_out => db_btn_reset);
 
-seg: seg7 Port map(x => vvv,g_to_a => g_to_a, dp => dp);
-mux: mux21 Port map (sel => counter, an => an);
+seg: seg7 Port map(x => displaynr,g_to_a => g_to_a, dp => dp);
+mux: mux21 Port map (data => score,clk => clk60, displaynr => displaynr, an => an);
 
 nhc <= to_integer(signed(hc));
 nvc <= to_integer(signed(vc));
@@ -280,18 +313,16 @@ sp1: blk_mem_gen_0 PORT MAP ( clka => clk, addra => rom_sprite_paddle, douta => 
 sp2: blk_mem_gen_paddle2 PORT MAP ( clka => clk, addra => rom_sprite_paddle2, douta => M2 );
 mem_ball: blk_mem_gen_ball PORT MAP ( clka => clk, addra => rom_sprite_ball, douta => M_ball );
 
---rr: vga_sprite Port Map(clk => clk,clk60 => clk60, vidon => vidon,hc => hc,vc => vc,
---                        M => M, M_ball => M_ball,
---                        sw => sw,
---                        rom_sprite_paddle => rom_sprite_paddle, rom_sprite_ball => rom_sprite_ball, 
---                        btn_up => knop, btn_down => btn_down,btn_reset => btn_reset);
+
 rr: vga_sprite Port Map(clk => clk,clk60 => clk60, 
                         vidon => vidon,hc => hc,vc => vc,
                         M => M,M2 => M2, M_ball => M_ball,
                         sw => sw,
                         rom_sprite_paddle => rom_sprite_paddle,rom_sprite_paddle2 => rom_sprite_paddle2, rom_sprite_ball => rom_sprite_ball,
                         red => vgaRed,green => vgaGreen,blue => vgaBlue, 
-                        btn_up => knop, btn_down => btn_down,btn_reset => btn_reset, btn_start => btn_start);
-
+                        btn_up => db_btn_up, btn_down => db_btn_down,btn_reset => db_btn_reset, btn_start => db_btn_start, scored => scored);
+                        
+count_eenheden: count10 Port map(clk => clk,rst => '0',en => '1',en_next => en_nxt , count => score_seg1, scored => scored);
+tens: count10 Port map(clk => clk,rst => '0', en => en_nxt, en_next => en_nxt1,count => score_seg2, scored => scored);
 
 end Behavioral;                                                                            
