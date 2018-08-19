@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date         : Sat Aug 18 23:29:59 2018
+| Date         : Sun Aug 19 20:16:32 2018
 | Host         : DESKTOP-JKG1DO6 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_module_control_sets_placed.rpt
 | Design       : top_module
@@ -33,12 +33,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              56 |           34 |
+| No           | No                    | No                     |              56 |           36 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |              25 |            7 |
-| Yes          | No                    | No                     |              37 |           25 |
+| Yes          | No                    | No                     |              37 |           24 |
 | Yes          | No                    | Yes                    |               9 |            2 |
-| Yes          | Yes                   | No                     |              13 |            8 |
+| Yes          | Yes                   | No                     |              13 |            6 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -52,17 +52,17 @@ Table of Contents
 |  rr/R20            |                              |                            |                1 |              1 |
 |  rr/RB0            |                              |                            |                1 |              1 |
 | ~rr/CLK            | count_eenheden/E[0]          | rr/count_int_reg[0]        |                1 |              4 |
-|  clk60_BUFG        | rr/X_ball[10]_i_1_n_0        | rr/X_ball[8]_i_1_n_0       |                4 |              5 |
+|  clk60_BUFG        | rr/X_ball[10]_i_1_n_0        | rr/X_ball[8]_i_1_n_0       |                3 |              5 |
 | ~rr/CLK            | clk_IBUF_BUFG                | rr/count_int_reg[0]        |                1 |              5 |
 |  clk60_BUFG        | rr/X_ball[10]_i_1_n_0        |                            |                6 |              6 |
-|  clk60_BUFG        | db_reset/Y_paddle2_reg[10]_0 | db_reset/Y_paddle2_reg[10] |                4 |              8 |
-|  clk60_BUFG        | db_reset/E[0]                |                            |                4 |             10 |
-|  xxx/inst/clk_out1 | vga/vsenable                 |                            |                7 |             10 |
-|  clk60_BUFG        | rr/Y_ball[10]_i_1_n_0        |                            |                8 |             11 |
-|  xxx/inst/clk_out1 |                              |                            |                5 |             11 |
-|  clk60_BUFG        |                              |                            |                9 |             15 |
+|  clk60_BUFG        | db_reset/Y_paddle2_reg[10]_0 | db_reset/Y_paddle2_reg[10] |                3 |              8 |
+|  clk60_BUFG        | db_reset/E[0]                |                            |                5 |             10 |
+|  xxx/inst/clk_out1 | vga/vsenable                 |                            |                6 |             10 |
+|  clk60_BUFG        | rr/Y_ball[10]_i_1_n_0        |                            |                7 |             11 |
+|  xxx/inst/clk_out1 |                              |                            |                6 |             11 |
+|  clk60_BUFG        |                              |                            |               11 |             15 |
 |  clk_IBUF_BUFG     |                              | c33/clear                  |                7 |             25 |
-|  clk_IBUF_BUFG     |                              |                            |               17 |             27 |
+|  clk_IBUF_BUFG     |                              |                            |               16 |             27 |
 +--------------------+------------------------------+----------------------------+------------------+----------------+
 
 

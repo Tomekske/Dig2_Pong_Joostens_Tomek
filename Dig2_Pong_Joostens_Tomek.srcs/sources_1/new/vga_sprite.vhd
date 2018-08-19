@@ -321,9 +321,7 @@ begin
             end if;
         -- logic       
             if  vidon = '1' and ball_fall = '0' then
-                     game_over <= '1';
-                    if qml = '0' then
-                                               
+                    if qml = '0' then                        
 
                         X_ball <= conv_std_logic_vector(conv_integer(X_ball) - 1,11);
                     elsif qmr = '0' then

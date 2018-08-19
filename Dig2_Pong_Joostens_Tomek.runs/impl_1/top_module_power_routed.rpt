@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date             : Sat Aug 18 23:30:20 2018
+| Date             : Sun Aug 19 20:16:51 2018
 | Host             : DESKTOP-JKG1DO6 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_module_power_routed.rpt -pb top_module_power_summary_routed.pb -rpx top_module_power_routed.rpx
 | Design           : top_module
@@ -57,7 +57,7 @@ Table of Contents
 |   F7/F8 Muxes  |    <0.001 |        8 |     32600 |            0.02 |
 |   Others       |     0.000 |       28 |       --- |             --- |
 |   BUFG         |     0.000 |        1 |        32 |            3.13 |
-| Signals        |    <0.001 |      533 |       --- |             --- |
+| Signals        |    <0.001 |      535 |       --- |             --- |
 | Block RAM      |     0.005 |      1.5 |        50 |            3.00 |
 | MMCM           |     0.116 |        1 |         5 |           20.00 |
 | I/O            |     0.028 |       35 |       106 |           33.02 |
