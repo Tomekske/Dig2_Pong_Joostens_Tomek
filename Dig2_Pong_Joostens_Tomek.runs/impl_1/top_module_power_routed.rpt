@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date             : Sun Aug 19 20:16:51 2018
+| Date             : Sun Aug 19 22:01:38 2018
 | Host             : DESKTOP-JKG1DO6 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_module_power_routed.rpt -pb top_module_power_summary_routed.pb -rpx top_module_power_routed.rpx
 | Design           : top_module
@@ -125,14 +125,14 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+--------------------+-----------------------------+-----------------+
-| Clock              | Domain                      | Constraint (ns) |
-+--------------------+-----------------------------+-----------------+
-| clk_out1_clk_wiz_0 | xxx/inst/clk_out1_clk_wiz_0 |            40.0 |
-| clkfbout_clk_wiz_0 | xxx/inst/clkfbout_clk_wiz_0 |            10.0 |
-| sys_clk_pin        | clk                         |            10.0 |
-| sys_clk_pin        | clk_IBUF_BUFG               |            10.0 |
-+--------------------+-----------------------------+-----------------+
++--------------------+---------------------------------+-----------------+
+| Clock              | Domain                          | Constraint (ns) |
++--------------------+---------------------------------+-----------------+
+| clk_out1_clk_wiz_0 | ipclock/inst/clk_out1_clk_wiz_0 |            40.0 |
+| clkfbout_clk_wiz_0 | ipclock/inst/clkfbout_clk_wiz_0 |            10.0 |
+| sys_clk_pin        | clk                             |            10.0 |
+| sys_clk_pin        | clk_IBUF_BUFG                   |            10.0 |
++--------------------+---------------------------------+-----------------+
 
 
 3. Detailed Reports
@@ -151,6 +151,8 @@ Table of Contents
 |   db_reset                                   |    <0.001 |
 |   db_start                                   |    <0.001 |
 |   db_up                                      |    <0.001 |
+|   ipclock                                    |     0.116 |
+|     inst                                     |     0.116 |
 |   mem_ball                                   |     0.002 |
 |     U0                                       |     0.002 |
 |       inst_blk_mem_gen                       |     0.002 |
@@ -176,8 +178,6 @@ Table of Contents
 |               prim_init.ram                  |     0.002 |
 |   tens                                       |    <0.001 |
 |   vga                                        |    <0.001 |
-|   xxx                                        |     0.116 |
-|     inst                                     |     0.116 |
 +----------------------------------------------+-----------+
 
 

@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-| Date         : Sun Aug 19 20:16:51 2018
+| Date         : Sun Aug 19 22:01:38 2018
 | Host         : DESKTOP-JKG1DO6 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_module_methodology_drc_routed.rpt -rpx top_module_methodology_drc_routed.rpx
 | Design       : top_module
@@ -40,7 +40,7 @@ Table of Contents
 -----------------
 TIMING-4#1 Warning
 Invalid primary clock redefinition on a clock tree  
-Invalid clock redefinition on a clock tree. The primary clock xxx/inst/clk_in1 is defined downstream of clock sys_clk_pin and overrides its insertion delay and/or waveform definition
+Invalid clock redefinition on a clock tree. The primary clock ipclock/inst/clk_in1 is defined downstream of clock sys_clk_pin and overrides its insertion delay and/or waveform definition
 Related violations: <none>
 
 TIMING-6#1 Warning
@@ -480,7 +480,7 @@ Related violations: <none>
 
 TIMING-27#1 Warning
 Invalid primary clock on hierarchical pin  
-A primary clock xxx/inst/clk_in1 is created on an inappropriate internal pin xxx/inst/clk_in1. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+A primary clock ipclock/inst/clk_in1 is created on an inappropriate internal pin ipclock/inst/clk_in1. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
 Related violations: <none>
 
 

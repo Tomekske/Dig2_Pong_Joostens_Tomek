@@ -34,57 +34,23 @@ use IEEE.std_logic_arith.all;
 
 entity vga_sprite is
 Port ( 
---    clk: in std_logic;
---    clk60: in std_logic;
---    vidon: in std_logic;
---    hc : in std_logic_vector(9 downto 0);
---    vc : in std_logic_vector(9 downto 0);
-    
---    M: in std_logic_vector(0 to 15);
---    M_ball: in std_logic_vector(0 to 15);
-    
---    sw: in std_logic_vector(7 downto 0);
-    
---    rom_sprite_paddle: out std_logic_vector(3 downto 0);
---    rom_sprite_ball: out std_logic_vector(3 downto 0);
-    
---    red : out std_logic_vector(3 downto 0);
---    green : out std_logic_vector(3 downto 0);
---    blue : out std_logic_vector(3 downto 0);
-    
---    btn_up: in std_logic;
---    btn_down: in std_logic;
---    btn_reset: in std_logic
-
-
-   clk: in std_logic;
-  clk60: in std_logic;
-  vidon: in std_logic;
-  hc : in std_logic_vector(9 downto 0);
-  vc : in std_logic_vector(9 downto 0);
-  M: in std_logic_vector(0 to 15);
-  M2: in std_logic_vector(0 to 15);
-  M_ball: in std_logic_vector(0 to 15);
-  sw: in std_logic_vector(7 downto 0);
-  rom_sprite_paddle: out std_logic_vector(3 downto 0);
-  rom_sprite_paddle2: out std_logic_vector(3 downto 0);
-  rom_sprite_ball: out std_logic_vector(3 downto 0);
-  red : out std_logic_vector(3 downto 0);
-  green : out std_logic_vector(3 downto 0);
-  blue : out std_logic_vector(3 downto 0);
-  btn_up: in std_logic;
-  btn_down: in std_logic;
-  btn_reset: in STD_LOGIC;
-  btn_start: in STD_LOGIC;
-  scored: out STD_LOGIC;
-  rst: out STD_LOGIC := '1'
+    clk, clk60: in std_logic;
+    vidon: in std_logic;
+    hc, vc : in std_logic_vector(9 downto 0);
+    M, M2, M_ball: in std_logic_vector(0 to 15);
+    sw: in std_logic_vector(7 downto 0);
+    rom_sprite_paddle, rom_sprite_paddle2, rom_sprite_ball: out std_logic_vector(3 downto 0);
+    red, green, blue: out std_logic_vector(3 downto 0);
+    btn_up, btn_down, btn_reset, btn_start: in std_logic;
+    scored: out STD_LOGIC;
+    rst: out STD_LOGIC := '1'
 );
 end vga_sprite;
 
 
 architecture Behavioral of vga_sprite is
 
--- constants
+-- Field constants
 constant vc_left_centerline: integer := 150;
 constant vc_rigt_centerline: integer := 775;
 constant vc_centerline: integer := ((vc_rigt_centerline - vc_left_centerline) / 2) + vc_left_centerline;
@@ -94,15 +60,12 @@ constant hc_bottomline: integer := 400;
 constant hc_centerline: integer := ((hc_bottomline - hc_topline) / 2) + hc_topline;
 
 
-
-
-
-
 constant hbp: std_logic_vector(9 downto 0) := "0010010000"; --144
 constant vbp: std_logic_vector(9 downto 0) := "0000011111"; --31
 constant w: integer := 16;
 constant h: integer := 16;
 
+-- Ball position constants 
 constant ball_max_left: integer := 2;
 constant ball_max_right: integer := 620;
 constant paddle_offset_start: integer := 6;
@@ -110,77 +73,56 @@ constant paddle_offset_start: integer := 6;
 constant Y_ball_start: integer := 236;
 constant X_ball_start: integer := 310;
 
+constant ball_max_top: integer := (hc_topline - 35);
+constant ball_max_bottom: integer := (hc_bottomline - 42);
+
+signal X_ball: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(X_ball_start),11);
+signal Y_ball: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(Y_ball_start),11);
+
+-- Paddle postition constants
 constant Y_paddle_start: integer := 236 - 40;
 constant X_paddle_start: integer := ball_max_left + paddle_offset_start;
 
 constant Y_paddle_start2: integer := 236 + 40;
 constant X_paddle_start2: integer := ball_max_right - paddle_offset_start;
 
-
-
-constant ball_max_top: integer := (hc_topline - 35);
-constant ball_max_bottom: integer := (hc_bottomline - 42);
-
 constant paddle_max_top: integer := (hc_topline - 30);
 constant paddle_max_bottom: integer := (hc_bottomline - 47);
+
 signal X_paddle: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(X_paddle_start),11);
 signal Y_paddle: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(Y_paddle_start),11);
 
 signal X_paddle2: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(X_paddle_start2),11);
 signal Y_paddle2: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(Y_paddle_start2),11);
 
---signal X_ball: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(310),11);
-signal X_ball: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(X_ball_start),11);
-signal Y_ball: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(Y_ball_start),11);
---signal Y_ball: std_logic_vector(10 downto 0) := conv_std_logic_vector(conv_integer(8),11);
-
 signal rom_addr, rom_pix: std_logic_vector(10 downto 0);
 signal spriteon, R, G, B: std_logic;
 
-signal red_paddle: STD_LOGIC_VECTOR (3 downto 0);                     -- rood
-signal green_paddle : STD_LOGIC_VECTOR (3 downto 0);                   -- groen
-signal blue_paddle : STD_LOGIC_VECTOR (3 downto 0);                   -- blauw
---
 signal rom_addr2, rom_pix2: std_logic_vector(10 downto 0);
 signal spriteon2, R2, G2, B2: std_logic;
 
-signal red_paddle2: STD_LOGIC_VECTOR (3 downto 0);                     -- rood
-signal green_paddle2 : STD_LOGIC_VECTOR (3 downto 0);                   -- groen
-signal blue_paddle2 : STD_LOGIC_VECTOR (3 downto 0);                   -- blauw
-
---
-signal red_ball: STD_LOGIC_VECTOR (3 downto 0);                     -- rood
-signal green_ball : STD_LOGIC_VECTOR (3 downto 0);                   -- groen
-signal blue_ball : STD_LOGIC_VECTOR (3 downto 0);                   -- blauw
+-- sprite colors
+signal red_paddle,green_paddle,blue_paddle: STD_LOGIC_VECTOR (3 downto 0);
+signal red_paddle2, green_paddle2,blue_paddle2: STD_LOGIC_VECTOR (3 downto 0);                     
+signal red_ball,green_ball,blue_ball: STD_LOGIC_VECTOR (3 downto 0);
+signal red_bg,green_bg,blue_bg: STD_LOGIC_VECTOR (3 downto 0);
 
 signal rom_addY_ball, rom_pix_ball: std_logic_vector(10 downto 0);
 signal spriteon_ball, RB, GB, BB: std_logic;
 
-signal red_bg: STD_LOGIC_VECTOR (3 downto 0);                     -- rood
-signal green_bg : STD_LOGIC_VECTOR (3 downto 0);                   -- groen
-signal blue_bg : STD_LOGIC_VECTOR (3 downto 0);                   -- blauw
+constant wb,hb: integer := 16;
 
-constant wb: integer := 16;
-constant hb: integer := 16;
-
-constant w2: integer := 16;
-constant h2: integer := 16;
+constant w2,h2: integer := 16;
 
 constant paddle_offset: integer := 8; 
 constant paddle_max: integer := conv_integer(Y_paddle) - 20; 
 constant paddle_min: integer := conv_integer(Y_paddle) + 20; 
 
-
-
-signal ball_fall: std_logic := '1';
-signal ball_down: std_logic := '1';
-signal ball_up: std_logic := '1';
-signal reset_paddle: std_logic := '1';
-signal reset_ball: std_logic := '1';
-signal reset: std_logic := '1';
+signal ball_fall,ball_down,ball_up: std_logic := '1';
+signal reset_paddle,reset_ball,reset: std_logic := '1';
 signal collision: std_logic := '1';
 signal sr1,sr2: std_logic := '1';
-signal q1,q2,q3,q4,qml,qmr,dir_right,dir_left,start,game_over,ball: std_logic := '1';
+signal qml,qmr,start,game_over: std_logic := '1';
 signal direction: std_logic_vector (3 downto 0);
 -- variables
 begin

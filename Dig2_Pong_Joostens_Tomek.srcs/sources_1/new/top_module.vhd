@@ -64,12 +64,6 @@ architecture Behavioral of top_module is
 -- ****************************************************
 -- ****************************************************
 
-component clock_div is
-Port(
-        clk_in: in STD_LOGIC;
-        clk_out: out STD_LOGIC
-    );
-end component clock_div;
 
 -- ====================================================
 
@@ -105,107 +99,56 @@ component vga_640x480 is
            vidon : out STD_LOGIC);
 end component vga_640x480;
 
-
-
-component vga_stipes is
- Port ( 
-    vidon: in std_logic; 
-    hc : in integer range 0 to 800;
-    vc : in integer range 0 to 800;
-    red : out std_logic_vector(3 downto 0);
-    green : out std_logic_vector(3 downto 0);
-    blue : out std_logic_vector(3 downto 0)
- );
-end component;
-
-component layer_background is
- Port ( 
-    vidon: in std_logic; 
-    hc : in integer range 0 to 800;
-    vc : in integer range 0 to 800;
-    red : out std_logic_vector(3 downto 0);
-    green : out std_logic_vector(3 downto 0);
-    blue : out std_logic_vector(3 downto 0)
- );
-end component;
-
-
-
---component vga_sprite is
---  Port ( 
---  clk: in std_logic;
---  clk60: in std_logic;
---  vidon: in std_logic;
---  hc : in std_logic_vector(9 downto 0);
---  vc : in std_logic_vector(9 downto 0);
-  
---  M: in std_logic_vector(0 to 15);
---  M_ball: in std_logic_vector(0 to 15);
-  
---  sw: in std_logic_vector(7 downto 0);
-  
---  rom_sprite_paddle: out std_logic_vector(3 downto 0);
---  rom_sprite_ball: out std_logic_vector(3 downto 0);
-  
---  red : out std_logic_vector(3 downto 0);
---  green : out std_logic_vector(3 downto 0);
---  blue : out std_logic_vector(3 downto 0);
-  
---  btn_up: in std_logic;
---  btn_down: in std_logic;
---  btn_reset: in std_logic
---  );
---end component;
+-- ====================================================
 
 component vga_sprite is
   Port ( 
- clk: in std_logic;
- clk60: in std_logic;
- vidon: in std_logic;
- hc : in std_logic_vector(9 downto 0);
- vc : in std_logic_vector(9 downto 0);
- M: in std_logic_vector(0 to 15);
- M2: in std_logic_vector(0 to 15);
- M_ball: in std_logic_vector(0 to 15);
- sw: in std_logic_vector(7 downto 0);
- rom_sprite_paddle: out std_logic_vector(3 downto 0);
- rom_sprite_paddle2: out std_logic_vector(3 downto 0);
- rom_sprite_ball: out std_logic_vector(3 downto 0);
- red : out std_logic_vector(3 downto 0);
- green : out std_logic_vector(3 downto 0);
- blue : out std_logic_vector(3 downto 0);
- btn_up: in std_logic;
- btn_down: in std_logic;
- btn_reset: in STD_LOGIC;
- btn_start: in STD_LOGIC;
- scored: out STD_LOGIC;
-   rst: out STD_LOGIC
-
+    clk, clk60: in std_logic;
+    vidon: in std_logic;
+    hc, vc : in std_logic_vector(9 downto 0);
+    M, M2, M_ball: in std_logic_vector(0 to 15);
+    sw: in std_logic_vector(7 downto 0);
+    rom_sprite_paddle, rom_sprite_paddle2, rom_sprite_ball: out std_logic_vector(3 downto 0);
+    red, green, blue: out std_logic_vector(3 downto 0);
+    btn_up, btn_down, btn_reset, btn_start: in std_logic;
+    scored: out STD_LOGIC;
+    rst: out STD_LOGIC
   );
 end component;
+
+-- ====================================================
+
 component clkdiv is
     Port ( clk : in STD_LOGIC;
            clr : in STD_LOGIC;
            clk25 : out STD_LOGIC);
 end component;
 
-COMPONENT blk_mem_gen_0 PORT (
-clka : IN STD_LOGIC;
-addra : IN STD_LOGIC_VECTOR(3 DOWNTO 0); 
-douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0) );
-END COMPONENT;
+-- ====================================================
 
-COMPONENT blk_mem_gen_paddle2 PORT (
+component blk_mem_gen_0 PORT (
 clka : IN STD_LOGIC;
 addra : IN STD_LOGIC_VECTOR(3 DOWNTO 0); 
 douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0) );
-END COMPONENT;
+END component;
 
-COMPONENT blk_mem_gen_ball PORT (
+-- ====================================================
+
+component blk_mem_gen_paddle2 PORT (
 clka : IN STD_LOGIC;
 addra : IN STD_LOGIC_VECTOR(3 DOWNTO 0); 
 douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0) );
-END COMPONENT;
+END component;
+
+-- ====================================================
+
+component blk_mem_gen_ball PORT (
+clka : IN STD_LOGIC;
+addra : IN STD_LOGIC_VECTOR(3 DOWNTO 0); 
+douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0) );
+END component;
+
+-- ====================================================
 
 component clk_wiz_0
 port
@@ -223,9 +166,7 @@ ATTRIBUTE SYN_BLACK_BOX OF clk_wiz_0 : COMPONENT IS TRUE;
 ATTRIBUTE BLACK_BOX_PAD_PIN : STRING;
 ATTRIBUTE BLACK_BOX_PAD_PIN OF clk_wiz_0 : COMPONENT IS "clk_in1,clk_out1,reset,locked";
 
-
-
-
+-- ====================================================
 
 component debounce is
     Port ( clk : in STD_LOGIC;
@@ -233,6 +174,7 @@ component debounce is
            sig_out : out STD_LOGIC);
 end component debounce;
 
+-- ====================================================
 
 component clock is
     Port ( clk : in STD_LOGIC;
@@ -240,11 +182,7 @@ component clock is
            clk_slow : out STD_LOGIC);
 end component;
 
-
-
-
-
-
+-- ====================================================
 
 component count10 is
     Port ( clk : in STD_LOGIC;
@@ -255,14 +193,12 @@ component count10 is
            scored: in STD_LOGIC
            );
 end component;
+
 -- ####################################################
 -- ####################################################
 
 signal div: STD_LOGIC;
 signal db_btn_up, db_btn_down, db_btn_start, db_btn_reset: STD_LOGIC;
-signal counter: STD_LOGIC_VECTOR (1 downto 0);
-signal vierkant: STD_LOGIC_VECTOR (3 downto 0);
-signal vvv: STD_LOGIC_VECTOR (3 downto 0);
 signal vidon, clr : STD_LOGIC;
 signal hc, vc : STD_LOGIC_VECTOR (9 downto 0);
 signal nhc, nvc: integer range 0 to 512; 
@@ -290,12 +226,12 @@ signal score_seg2: STD_LOGIC_VECTOR (3 downto 0) := "0000";
 signal score_seg3: STD_LOGIC_VECTOR (3 downto 0) := "0000";
 signal score_seg4: STD_LOGIC_VECTOR (3 downto 0) := "0000";
 signal score: STD_LOGIC_VECTOR (15 downto 0) := score_seg4 & score_seg3 & score_seg2 & score_seg1;
+
 -- ####################################################
 -- ####################################################
 
 begin
---clock: clock_div Port map(clk_in => clk,clk_out => div);
---cclock: clkdiv Port map(clk => clk,clr => clr,clk25 => div);
+
 c33: clock Port map (clk => clk, div => "01", clk_slow => clk60);
 csnel: clock Port map (clk => clk, div => "11", clk_slow => clk30);
 db_up: debounce Port map(clk => clk, sig_in => btn_up, sig_out => db_btn_up);
@@ -308,7 +244,7 @@ mux: mux21 Port map (data => score,clk => clk60, displaynr => displaynr, an => a
 
 nhc <= to_integer(signed(hc));
 nvc <= to_integer(signed(vc));
-xxx: clk_wiz_0 port map (clk_in1 => clk, clk_out1 => clk25, reset => clr, locked => open);
+ipclock: clk_wiz_0 port map (clk_in1 => clk, clk_out1 => clk25, reset => clr, locked => open);
 
 vga: vga_640x480 Port map(clk => clk25, clr => clr, hsync => Hsync, vsync => Vsync, hc => hc, vc => vc, vidon => vidon);
 sp1: blk_mem_gen_0 PORT MAP ( clka => clk, addra => rom_sprite_paddle, douta => M );

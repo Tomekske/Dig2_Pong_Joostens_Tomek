@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: Christophe Huybrechts
+-- Engineer:
 -- 
 -- Create Date: 04.05.2016 17:10:22
 -- Design Name: 
