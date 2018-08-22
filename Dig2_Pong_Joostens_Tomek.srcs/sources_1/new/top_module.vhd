@@ -76,7 +76,7 @@ component seg7 is
         dp : out STD_LOGIC
 
         );
-    end component seg7;
+ end component seg7;
 
 -- ====================================================
 
