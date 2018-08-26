@@ -1,0 +1,39 @@
+Unable to capture context for thread 14024 in process 11532, can not generate back trace
+Exception at PC 0x00007FF81E40A388
+Unable to capture context for thread 14024 in process 11532, can not generate back trace
+Exception at PC 0x00007FFFEECDBB93
+Printing stacktrace...
+
+Exception at PC 0x00007FF81E40A388
+Exception at PC 0x00007FF81E40A388
+Unable to capture context for thread 19484 in process 11532, can not generate back trace
+Exception at PC 0x00007FF81E40A388
+Exception at PC 0x00007FF81E40A388
+Exception at PC 0x00007FF81E40A388
+Exception at PC 0x00007FF81E40A388
+Exception at PC 0x00007FF81E40A388
+Exception at PC 0x00007FF81E40A388
+Exception at PC 0x00007FF81E40A388
+Exception at PC 0x00007FF81E40A388
+Exception at PC 0x00007FF81E40A388
+[0]  [0x00007FFFEECDBB93]
+[1]  [0x00007FFFEECDBB93]
+[2]  [0x00007FFFEECDB4A1]
+[3]  [0x00007FFFEECDB3EF]
+[4]  [0x00007FFFEECC19FE]
+[5]  [0x00007FFFEECC0ED1]
+[6]  [0x00007FFFEECC0D76]
+[7]  [0x00007FFFEEC679F6]
+[8]  [0x00007FFFEEC57AFB]
+[9]  [0x00007FFFEED7E90A]
+[10]  [0x00007FFFEED99F87]
+[11]  [0x00007FFFEED9A05F]
+[12] (BaseThreadInitThunk+0x14) [0x00007FF821873034]
+[13] (RtlUserThreadStart+0x21) [0x00007FF821ED1431]
+Done
+Exception at PC 0x00007FF81E40A388
+Exception at PC 0x00007FF81E40A388
+Exception at PC 0x00007FF81E40A388
+Exception at PC 0x00007FF81E40A388
+Exception at PC 0x00007FF81E40A388
+Exception at PC 0x00007FF81E40A388

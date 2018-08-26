@@ -2,3 +2,6 @@ Running: xsim.dir/count10_TB_behav/xsimk.exe -simmode gui -wdb count10_TB_behav.
 Design successfully loaded
 Design Loading Memory Usage: 9316 KB (Peak: 9316 KB)
 Design Loading CPU Usage: 31 ms
+Simulation completed
+Simulation Memory Usage: 10064 KB (Peak: 10064 KB)
+Simulation CPU Usage: 31 ms
